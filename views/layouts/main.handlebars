@@ -1,0 +1,24 @@
+<html lang='en'>
+	<head>
+		<title>{{title}}</title>
+
+		{{#each styles}}
+			<link rel='stylesheet' href='assets/css/{{sheet}}.css' />
+		{{/each}}
+	</head>
+	<body>
+
+		<nav>
+			<ul>
+				<li>
+					<a href='login'>Log in</a>
+				</li>
+				<li>Dashboard</li>
+			</ul>
+		</nav>
+
+		<main>
+			{{{body}}}
+		</main>
+	</body>
+</html>
