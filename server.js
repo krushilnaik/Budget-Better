@@ -35,7 +35,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/api', apiRoutes);
 
 app.get('/login', (req, res) => {
-	res.render('login');
+	res.render('login', {
+		title: 'Budget Better | Login',
+		styles: [{ sheet: 'style' }, { sheet: 'login' }]
+	});
 });
 
 app.get('/', (req, res) => {
