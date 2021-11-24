@@ -2,21 +2,21 @@ const path = require('path');
 const express = require('express');
 const { engine } = require('express-handlebars');
 const session = require('express-session');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const sequelize = require('./config/connection');
+// const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const sequelize = require('./config/connection');
 
-/**
- * @type {session.SessionOptions}
- */
-const sess = {
-	secret: 'I like oreos',
-	cookie: {},
-	resave: false,
-	saveUnitialized: true,
-	store: new SequelizeStore({
-		db: sequelize
-	})
-};
+// /**
+//  * @type {session.SessionOptions}
+//  */
+// const sess = {
+// 	secret: 'I like oreos',
+// 	cookie: {},
+// 	resave: false,
+// 	saveUnitialized: true,
+// 	store: new SequelizeStore({
+// 		db: sequelize
+// 	})
+// };
 
 const PORT = process.env.PORT || 3001;
 
@@ -49,6 +49,6 @@ app.get('/', (req, res) => {
 	});
 });
 
-sequelize.sync({ force: false }).then(() => {
-	app.listen(PORT, () => console.log(`Now listening on ${PORT}!`));
-});
+// sequelize.sync({ force: false }).then(() => {
+app.listen(PORT, () => console.log(`Now listening on ${PORT}!`));
+// });
