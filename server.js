@@ -37,7 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/login', (req, res) => {
 	res.render('login', {
 		title: 'Budget Better | Login',
-		styles: [{ sheet: 'style' }, { sheet: 'login' }]
+		styles: [{ sheet: 'style' }, { sheet: 'login' }],
+		scripts: [{ script: 'login' }]
 	});
 });
 

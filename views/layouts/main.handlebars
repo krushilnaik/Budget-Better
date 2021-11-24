@@ -8,17 +8,14 @@
 	</head>
 	<body>
 
-		<nav>
-			<ul>
-				<li>
-					<a href='login'>Log in</a>
-				</li>
-				<li>Dashboard</li>
-			</ul>
-		</nav>
+		{{> nav}}
 
 		<main>
 			{{{body}}}
 		</main>
+
+		{{#each scripts}}
+			<script src='assets/js/{{script}}.js'></script>
+		{{/each}}
 	</body>
 </html>

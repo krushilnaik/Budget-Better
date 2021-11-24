@@ -43,10 +43,14 @@ a:hover {
 }
 
 main {
-	background-color: dodgerblue;
+	background-color: #1672ce;
 	display: grid;
 	place-content: center;
 	font-family: monospace;
 	font-size: 36px;
 	color: honeydew;
+}
+
+button {
+	cursor: pointer;
 }
