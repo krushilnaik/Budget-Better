@@ -1,0 +1,21 @@
+<html lang='en'>
+	<head>
+		<title>{{title}}</title>
+
+		{{#each styles}}
+			<link rel='stylesheet' href='assets/css/{{sheet}}.css' />
+		{{/each}}
+	</head>
+	<body>
+
+		{{> nav}}
+
+		<main>
+			{{{body}}}
+		</main>
+
+		{{#each scripts}}
+			<script src='assets/js/{{script}}.js'></script>
+		{{/each}}
+	</body>
+</html>

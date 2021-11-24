@@ -1,0 +1,34 @@
+<div class='login'>
+	<div class='tooltip'>
+		<h2>Log in here!</h2>
+			<h3>
+				Not a member?
+				<button id='toggle' onclick='toggle();'>Sign up</button>
+			</h3>
+	</div>
+	<div class='form'>
+		<form>
+			{{> input type="email" id="email" placeholder="Email:"}}
+			{{> input type="password" id="password" placeholder="Password:"}}
+			<button id="submit" type="submit">Submit</button>
+		</form>
+	</div>
+</div>
+
+<script
+	src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js'
+	integrity='sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=='
+	crossorigin='anonymous'
+	referrerpolicy='no-referrer'
+></script>
+
+<script>
+	anime({
+		targets: '.login',
+		scale: [1.25, 1],
+		opacity: [0, 1],
+		duration: 550,
+		autoplay: true,
+		easing: 'easeOutSine'
+	});
+</script>
