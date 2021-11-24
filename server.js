@@ -1,9 +1,11 @@
 const path = require('path');
 const express = require('express');
 const { engine } = require('express-handlebars');
-const session = require('express-session');
+// const session = require('express-session');
 // const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // const sequelize = require('./config/connection');
+
+require('dotenv').config();
 
 // /**
 //  * @type {session.SessionOptions}
@@ -27,7 +29,7 @@ const app = express();
 app.engine('handlebars', engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
-app.use(session(sess));
+// app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
