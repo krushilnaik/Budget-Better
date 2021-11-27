@@ -9,13 +9,13 @@ function toggle() {
 		if (result) {
 			login.querySelector('h2').innerText = 'Join us!';
 			login.querySelector('h3').innerHTML = /*html*/ `
-				Already a member?
+				<span>Already a member?</span>
 				<button id='toggle' onclick='toggle();'>Log in.</button>
 			`;
 		} else {
 			login.querySelector('h2').innerText = 'Log in here!';
 			login.querySelector('h3').innerHTML = /*html*/ `
-				Not a member?
+				<span>Not a member?</span>
 				<button id='toggle' onclick='toggle();'>Sign up.</button>
 			`;
 		}
