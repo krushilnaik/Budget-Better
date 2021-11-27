@@ -4,8 +4,10 @@ const Item = require("./Item");
 
 // defining relationships
 
-Event.hasMany(Item);
+Event.hasMany(Item, {
+    foreignKey: "event_id"
+});
 
-User.hasMany(Event);
-
-Item.belongsTo(Event);
+User.hasMany(Event, {
+    foreignKey: "user_id"
+});
