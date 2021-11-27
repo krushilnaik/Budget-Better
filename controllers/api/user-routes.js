@@ -19,8 +19,13 @@ router.get("/:id", (req, res) => {
         attributes: { exclude: ["password"] },
         where: {
             id: req.params.id
+        },
+        include: {
+            model: Event,
+            include: {
+                model: Item
+            }
         }
-        // inclusions will go here
     })
         .then(dbUserData => {
             if (!dbUserData) {
