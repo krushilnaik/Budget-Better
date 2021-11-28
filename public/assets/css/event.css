@@ -21,7 +21,7 @@
 	font-size: 22px;
 }
 
-ul {
+.items ul {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -31,8 +31,7 @@ ul {
 	flex-direction: column;
 	gap: 10px;
 }
-
-li {
+.items ul li {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -51,10 +50,10 @@ li {
 	border-radius: 10px;
 	padding: 7px;
 }
-li > * {
+.items ul li > * {
 	font-size: 22px;
 }
-li .price {
+.items ul li .price {
 	background-color: rgba(255, 255, 255, 0.3);
 	border-radius: 10px;
 	padding: 7px;

@@ -11,6 +11,23 @@ body {
 	background-color: #1672ce;
 }
 
+.logo {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 15px;
+}
+.logo img {
+	width: 50px;
+}
+
 nav {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -54,7 +71,6 @@ a {
 	transition: color 250ms;
 	color: honeydew;
 }
-
 a:hover {
 	color: darkslateblue;
 }
@@ -74,4 +90,13 @@ main {
 
 button {
 	cursor: pointer;
+}
+
+footer {
+	text-align: center;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.2);
+	color: honeydew;
+	font-family: sans-serif;
+	font-size: 20px;
 }
