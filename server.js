@@ -51,9 +51,9 @@ app.get('/', (req, res) => {
 	});
 });
 
-router.use((req, res) => {
-	res.status(404).end();
-});
+// router.use((req, res) => {
+// 	res.status(404).end();
+// });
 
 sequelize.sync({ force: false }).then(() => {
 	app.listen(PORT, () => console.log(`Now listening on ${PORT}!`));

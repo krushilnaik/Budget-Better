@@ -18,7 +18,10 @@ router.get("/:id", (req, res) => {
             id: req.params.id
         },
         include: {
-            model: User
+            model: User,
+            attributes: { 
+                exclude: ['password'] 
+            }
         }
     })
         .then(dbEventData => {
