@@ -1,0 +1,31 @@
+.input {
+	position: relative;
+	z-index: 0;
+
+	input {
+		background-color: transparent;
+		line-height: 1.5em;
+		font-size: 24px;
+		outline: none;
+		border: none;
+		border-bottom: solid 1px rgba($color: honeydew, $alpha: 0.75);
+		color: honeydew;
+	}
+
+	&::after {
+		position: absolute;
+		content: attr(data-placeholder);
+		z-index: -1;
+		top: 0;
+		left: 0;
+		font-size: 24px;
+		color: honeydew;
+		transition: transform 250ms;
+		transform: scale(1) translateY(0);
+		transform-origin: 0 0;
+	}
+
+	&:focus-within::after {
+		transform: scale(0.55) translateY(-1em);
+	}
+}

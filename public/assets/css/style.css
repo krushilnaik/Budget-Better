@@ -8,6 +8,24 @@
 body {
 	display: grid;
 	grid-template-rows: 4em 1fr;
+	background-color: #1672ce;
+}
+
+.logo {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 15px;
+}
+.logo img {
+	width: 50px;
 }
 
 nav {
@@ -28,8 +46,8 @@ nav {
 	font-size: 20px;
 	background-color: lightseagreen;
 	color: honeydew;
-	-webkit-box-shadow: 10px 5px 5px red;
-	box-shadow: 10px 5px 5px red;
+	-webkit-box-shadow: 0 0 7px black;
+	box-shadow: 0 0 7px black;
 }
 nav ul {
 	display: -webkit-box;
@@ -53,13 +71,11 @@ a {
 	transition: color 250ms;
 	color: honeydew;
 }
-
 a:hover {
 	color: darkslateblue;
 }
 
 main {
-	background-color: #1672ce;
 	display: grid;
 	-ms-flex-line-pack: center;
 	align-content: center;
@@ -74,4 +90,13 @@ main {
 
 button {
 	cursor: pointer;
+}
+
+footer {
+	text-align: center;
+	padding: 15px;
+	background-color: rgba(0, 0, 0, 0.2);
+	color: honeydew;
+	font-family: sans-serif;
+	font-size: 20px;
 }

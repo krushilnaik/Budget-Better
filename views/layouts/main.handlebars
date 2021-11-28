@@ -2,20 +2,16 @@
 	<head>
 		<title>{{title}}</title>
 
-		{{#each styles}}
-			<link rel='stylesheet' href='assets/css/{{sheet}}.css' />
-		{{/each}}
+		<link rel="stylesheet" href="assets/css/style.css">
 	</head>
-	<body>
+	<body class="grid bg-blue-600">
 
 		{{> nav}}
 
-		<main>
+		<main class="grid place-content-center font-mono text-4xl text-green-50">
 			{{{body}}}
 		</main>
 
-		{{#each scripts}}
-			<script src='assets/js/{{script}}.js'></script>
-		{{/each}}
+		{{> footer}}
 	</body>
 </html>

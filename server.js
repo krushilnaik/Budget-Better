@@ -34,22 +34,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(router);
 
 app.get('/login', (req, res) => {
-	res.render('login', {
-		title: 'Budget Better | Login',
-		styles: [{ sheet: 'style' }, { sheet: 'login' }],
-		scripts: [{ script: 'login' }]
-	});
+	res.render('login', { title: 'Budget Better | Login' });
+});
+
+app.get('/new-event', (req, res) => {
+	res.render('new-event');
 });
 
 app.get('/', (req, res) => {
-	res.render('index', {
-		title: 'Budget Better',
-		styles: [{ sheet: 'style' }, { sheet: 'index' }]
-	});
+	res.render('index', { title: 'Budget Better' });
 });
 
 app.all('*', (req, res) => {
-	res.status(404).end();
+	res.render('404');
 });
 
 sequelize.sync({ force: false }).then(() => {
