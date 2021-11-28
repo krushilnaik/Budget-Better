@@ -41,6 +41,10 @@ app.get('/login', (req, res) => {
 	});
 });
 
+app.get('/new-event', (req, res) => {
+	res.render('new-event');
+});
+
 app.get('/', (req, res) => {
 	res.render('index', {
 		title: 'Budget Better',
@@ -49,7 +53,7 @@ app.get('/', (req, res) => {
 });
 
 app.all('*', (req, res) => {
-	res.status(404).end();
+	res.render('404');
 });
 
 sequelize.sync({ force: false }).then(() => {
