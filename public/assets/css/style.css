@@ -8,6 +8,7 @@
 body {
 	display: grid;
 	grid-template-rows: 4em 1fr;
+	background-color: #1672ce;
 }
 
 nav {
@@ -28,8 +29,8 @@ nav {
 	font-size: 20px;
 	background-color: lightseagreen;
 	color: honeydew;
-	-webkit-box-shadow: 10px 5px 5px red;
-	box-shadow: 10px 5px 5px red;
+	-webkit-box-shadow: 0 0 7px black;
+	box-shadow: 0 0 7px black;
 }
 nav ul {
 	display: -webkit-box;
@@ -59,7 +60,6 @@ a:hover {
 }
 
 main {
-	background-color: #1672ce;
 	display: grid;
 	-ms-flex-line-pack: center;
 	align-content: center;

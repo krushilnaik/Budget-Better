@@ -1,10 +1,18 @@
 .event {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 	border: solid 4px salmon;
 	border-radius: 10px;
 	background-color: darken($color: salmon, $amount: 9);
 	max-width: 20em;
 	padding: 7px;
-	box-shadow: 2px 2px 20px darkslategray;
+	font-size: 26px;
+	box-shadow: 2px 2px 15px darkslategray;
+}
+
+.description {
+	font-size: 22px;
 }
 
 ul {
@@ -22,6 +30,10 @@ li {
 	background-color: rgba($color: white, $alpha: 0.2);
 	border-radius: 10px;
 	padding: 7px;
+
+	> * {
+		font-size: 22px;
+	}
 
 	.price {
 		background-color: rgba($color: white, $alpha: 0.3);

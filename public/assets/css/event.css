@@ -1,11 +1,24 @@
 .event {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 10px;
 	border: solid 4px salmon;
 	border-radius: 10px;
 	background-color: #f85846;
 	max-width: 20em;
 	padding: 7px;
-	-webkit-box-shadow: 2px 2px 20px darkslategray;
-	box-shadow: 2px 2px 20px darkslategray;
+	font-size: 26px;
+	-webkit-box-shadow: 2px 2px 15px darkslategray;
+	box-shadow: 2px 2px 15px darkslategray;
+}
+
+.description {
+	font-size: 22px;
 }
 
 ul {
@@ -37,6 +50,9 @@ li {
 	background-color: rgba(255, 255, 255, 0.2);
 	border-radius: 10px;
 	padding: 7px;
+}
+li > * {
+	font-size: 22px;
 }
 li .price {
 	background-color: rgba(255, 255, 255, 0.3);
