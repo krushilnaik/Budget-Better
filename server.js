@@ -1,42 +1,56 @@
+const path = require('path');
+const express = require('express');
+const { engine } = require('express-handlebars');
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sequelize = require('./config/connection');
 const routes = require("./controllers");
-const express = require("express");
-const exphbs = require("express-handlebars");
-const helpers = require("./utils/helpers");
-const hbs = exphbs.create({ helpers });
 
-const sequelize = require("./config/connection");
-
-const path = require("path");
-
-const app = express();
-const PORT = process.env.PORT || 3001;
-
-const session = require("express-session");
-const SequelizeStore = require("connect-session-sequelize")(session.Store);
-
+/**
+ * @type {session.SessionOptions}
+ */
 const sess = {
-    secret: "I like oreos",
-    cookie: {},
-    resave: false,
-    saveUnitialized: true,
-    store: new SequelizeStore({
-        db: sequelize
-    })
+	secret: 'I like oreos',
+	cookie: {},
+	resave: false,
+	saveUnitialized: true,
+	store: new SequelizeStore({
+		db: sequelize
+	})
 };
 
-app.use(session(sess));
+const PORT = process.env.PORT || 3001;
 
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
+const app = express();
+
+// const apiRoutes = require('./controllers/api');
+
+app.engine('handlebars', engine({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use('/api', apiRoutes);
 app.use(routes);
 
-sequelize.sync({ force: false })
-    .then(() => {
-        app.listen(PORT, () => console.log(`Now listening on ${PORT}!`));
-    });
+app.get('/login', (req, res) => {
+	res.render('login', {
+		title: 'Budget Better | Login',
+		styles: [{ sheet: 'style' }, { sheet: 'login' }],
+		scripts: [{ script: 'login' }]
+	});
+});
+
+app.get('/', (req, res) => {
+	res.render('index', {
+		title: 'Budget Better',
+		styles: [{ sheet: 'style' }, { sheet: 'index' }]
+	});
+});
+
+sequelize.sync({ force: false }).then(() => {
+	app.listen(PORT, () => console.log(`Now listening on ${PORT}!`));
+});

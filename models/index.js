@@ -11,3 +11,9 @@ Event.hasMany(Item, {
 User.hasMany(Event, {
     foreignKey: "user_id"
 });
+
+module.exports = {
+    User,
+    Event,
+    Item
+};
