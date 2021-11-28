@@ -37,7 +37,7 @@ form {
 		font-size: 24px;
 		outline: none;
 		border: none;
-		border-bottom: solid 1px #f0fff0bb;
+		border-bottom: solid 1px rgba($color: honeydew, $alpha: 0.75);
 		color: honeydew;
 
 		&::placeholder {

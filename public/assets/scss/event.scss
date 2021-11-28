@@ -1,0 +1,31 @@
+.event {
+	border: solid 4px salmon;
+	border-radius: 10px;
+	background-color: darken($color: salmon, $amount: 9);
+	max-width: 20em;
+	padding: 7px;
+	box-shadow: 2px 2px 20px darkslategray;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+li {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	list-style-type: none;
+	background-color: rgba($color: white, $alpha: 0.2);
+	border-radius: 10px;
+	padding: 7px;
+
+	.price {
+		background-color: rgba($color: white, $alpha: 0.3);
+		border-radius: 10px;
+		padding: 7px;
+	}
+}
