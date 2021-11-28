@@ -22,7 +22,6 @@
 	},
 	"homepage": "https://github.com/krushilnaik/Project-2#readme",
 	"dependencies": {
-		"@types/sequelize": "^4.28.10",
 		"bcrypt": "^5.0.1",
 		"connect-session-sequelize": "^7.1.2",
 		"dotenv": "^10.0.0",
