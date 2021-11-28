@@ -17,12 +17,15 @@ router.get("/:id", (req, res) => {
         where: {
             id: req.params.id
         },
-        include: {
+        include: [{
             model: User,
             attributes: { 
                 exclude: ['password'] 
             }
-        }
+        },
+        {
+            model: Item
+        }]
     })
         .then(dbEventData => {
             if (!dbEventData) {
@@ -43,7 +46,8 @@ router.post("/", (req, res) => {
         Event.create({
             title: req.body.title,
             date: req.body.date,
-            budget: req.body.budget
+            budget: req.body.budget,
+            user_id: req.body.user_id
         })
             .then(dbEventData => res.json(dbEventData))
             .catch(err => {
