@@ -22,6 +22,42 @@ function toggle() {
 	}, 120);
 }
 
-submitButton.addEventListener('click', event => {
+submitButton.addEventListener('submit', event => {
 	event.preventDefault();
+
+	const email = document.querySelector('#email').value.trim();
+	const password = document.querySelector('#password').value.trim();
+
+	// create new user, how to include toggle?
+	if (email && password) {
+		const response = await fetch('/api/users', {
+			method: 'post',
+			body: JSON.stringify({
+				email,
+				password
+			}),
+			headers: { 'Content-Type': 'application/json' }
+		});
+
+		if (response.ok) {
+			//document.location.replace('/dashboard/'); what is th new location?
+		} else {
+			alert(response.statusText);
+		}
+	} else if (email && password) { //login new user, missing toggle?
+		const response = await fetch('/api/users/login', {
+			method: 'post',
+			body: JSON.stringify({
+				email,
+				password
+			}),
+			headers: { 'Content-Type': 'application/json' }
+		});
+
+		if (response.ok) {
+			//document.location.replace('/dashboard/'); what is th new location?
+		} else {
+			alert(response.statusText);
+		}
+	} 
 });
