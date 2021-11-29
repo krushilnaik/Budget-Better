@@ -47,7 +47,7 @@ router.post("/", (req, res) => {
             title: req.body.title,
             date: req.body.date,
             budget: req.body.budget,
-            user_id: req.body.user_id
+            user_id: req.body.user_id //shouldn't this be req.session.user_id?
         })
             .then(dbEventData => res.json(dbEventData))
             .catch(err => {
