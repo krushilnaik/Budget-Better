@@ -1,5 +1,20 @@
 # Budget Better
 
+<p align="center">
+	<a href="https://rutgers-budget-better.herokuapp.com/">
+		<img src="https://i.imgur.com/nT9LavM.png" height="40" />
+	</a>
+</p>
+
+## Table of Contents
+
+- [Budget Better](#budget-better)
+	- [Table of Contents](#table-of-contents)
+	- [MVP](#mvp)
+	- [Full Project](#full-project)
+	- [Tech Stack](#tech-stack)
+	- [How to run](#how-to-run)
+
 ## MVP
 
 ```
@@ -9,6 +24,8 @@ they can create line items for:
 flowers, limo, and catering. They will then enter the cost of each item in the front end, and we will take that entered information and send it in a post request to the database.
 ```
 
+## Full Project
+
 ```
 When a user visits the website they are greeted to a sign in page. Once the user is signed in, they are taken to a dashboard of each event that is stored in the database for that user. They can view and edit saved events,
 or they can create a new event.
@@ -16,3 +33,15 @@ When the user creates a new event, they add a title/name of the event. Then, the
 they can create line items for:
 flowers, limo, and catering. They will then enter the cost of each item in the front end, and we will take that entered information and send it in a post request to the database.
 ```
+
+## Tech Stack
+
+- Gulp (build system)
+- SCSS (styling)
+- Handlebars (templating engine)
+- MySQL (database)
+- Sequelize ORM
+
+## How to run
+
+`yarn install` (or `npm install`) followed by `yarn start` (or `npm start`)
