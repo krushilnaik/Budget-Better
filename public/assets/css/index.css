@@ -20,4 +20,5 @@ h1 {
 	flex-direction: row;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+	gap: 15px;
 }

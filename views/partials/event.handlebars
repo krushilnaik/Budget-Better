@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="assets/css/event.css" />
 <div class="event">
   <h2>
     Event title
@@ -6,11 +5,23 @@
   <p class="description">
     Event description. Describes what the event is about.
   </p>
-  <h3>
-    Items
-  </h3>
-  <ul class="items">
-    {{!-- {{#each items}}
+  <div class="items">
+    <h3>
+      Items
+    </h3>
+    <ul>
+      {{!-- {{#each items}}
+	      <li>
+	        <div class="item">
+	          Item title
+	        </div>
+	        <span class="price">
+	          $ 100
+	        </span>
+	      </li>
+	    {{else}}
+	      No items added to this event.
+	    {{/each}} --}}
       <li>
         <div class="item">
           Item title
@@ -19,32 +30,22 @@
           $ 100
         </span>
       </li>
-    {{else}}
-      No items added to this event.
-    {{/each}} --}}
-    <li>
-      <div class="item">
-        Item title
-      </div>
-      <span class="price">
-        $ 100
-      </span>
-    </li>
-    <li>
-      <div class="item">
-        Item title
-      </div>
-      <span class="price">
-        $ 100
-      </span>
-    </li>
-    <li>
-      <div class="item">
-        Item title
-      </div>
-      <span class="price">
-        $ 100
-      </span>
-    </li>
-  </ul>
+      <li>
+        <div class="item">
+          Item title
+        </div>
+        <span class="price">
+          $ 100
+        </span>
+      </li>
+      <li>
+        <div class="item">
+          Item title
+        </div>
+        <span class="price">
+          $ 100
+        </span>
+      </li>
+    </ul>
+  </div>
 </div>

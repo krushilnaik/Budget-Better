@@ -51,60 +51,6 @@ form {
 	flex-direction: column;
 	gap: 30px;
 }
-form input {
-	background-color: transparent;
-	line-height: 1.5em;
-	font-size: 24px;
-	outline: none;
-	border: none;
-	border-bottom: solid 1px rgba(240, 255, 240, 0.75);
-	color: honeydew;
-}
-form input::-webkit-input-placeholder {
-	color: honeydew;
-}
-form input::-moz-placeholder {
-	color: honeydew;
-}
-form input:-ms-input-placeholder {
-	color: honeydew;
-}
-form input::-ms-input-placeholder {
-	color: honeydew;
-}
-form input::placeholder {
-	color: honeydew;
-}
-
-.input {
-	position: relative;
-	z-index: 0;
-}
-.input::after {
-	position: absolute;
-	content: attr(data-placeholder);
-	z-index: -1;
-	top: 0;
-	left: 0;
-	font-size: 24px;
-	color: honeydew;
-	-webkit-transition: -webkit-transform 250ms;
-	transition: -webkit-transform 250ms;
-	transition: transform 250ms;
-	transition: transform 250ms, -webkit-transform 250ms;
-	-webkit-transform: scale(1) translateY(0);
-	transform: scale(1) translateY(0);
-	-webkit-transform-origin: 0 0;
-	transform-origin: 0 0;
-}
-.input[focus-within]::after {
-	-webkit-transform: scale(0.55) translateY(-1em);
-	transform: scale(0.55) translateY(-1em);
-}
-.input:focus-within::after {
-	-webkit-transform: scale(0.55) translateY(-1em);
-	transform: scale(0.55) translateY(-1em);
-}
 
 .tooltip {
 	text-align: center;

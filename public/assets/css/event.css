@@ -1,14 +1,27 @@
 .event {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 10px;
 	border: solid 4px salmon;
 	border-radius: 10px;
 	background-color: #f85846;
 	max-width: 20em;
 	padding: 7px;
-	-webkit-box-shadow: 2px 2px 20px darkslategray;
-	box-shadow: 2px 2px 20px darkslategray;
+	font-size: 26px;
+	-webkit-box-shadow: 2px 2px 15px darkslategray;
+	box-shadow: 2px 2px 15px darkslategray;
 }
 
-ul {
+.description {
+	font-size: 22px;
+}
+
+.items ul {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -18,8 +31,7 @@ ul {
 	flex-direction: column;
 	gap: 10px;
 }
-
-li {
+.items ul li {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -38,7 +50,10 @@ li {
 	border-radius: 10px;
 	padding: 7px;
 }
-li .price {
+.items ul li > * {
+	font-size: 22px;
+}
+.items ul li .price {
 	background-color: rgba(255, 255, 255, 0.3);
 	border-radius: 10px;
 	padding: 7px;
