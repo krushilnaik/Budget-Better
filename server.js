@@ -45,15 +45,9 @@ app.get('/', (req, res) => {
 	res.render('index', { title: 'Budget Better' });
 });
 
-<<<<<<< HEAD
-// router.use((req, res) => {
-// 	res.status(404).end();
-// });
-=======
 app.all('*', (req, res) => {
 	res.render('404');
 });
->>>>>>> ac04214d3829f20c9a009a98d40acfb77d1f5604
 
 sequelize.sync({ force: false }).then(() => {
 	app.listen(PORT, () => console.log(`Now listening on ${PORT}!`));
