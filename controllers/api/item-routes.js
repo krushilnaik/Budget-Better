@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Event, Item } = require("../../models");
+const userAuth = require("../../utils/auth");
 
 // get all items
 router.get("/", (req, res) => {
@@ -20,7 +21,10 @@ router.get("/:id", (req, res) => {
         include: {
             model: Event,
             include: {
-                model: User
+                model: User,
+                attributes: { 
+                    exclude: ['password'] 
+                }
             }
         }
     })
@@ -38,7 +42,7 @@ router.get("/:id", (req, res) => {
 });
 
 // create a new item
-router.post("/", (req, res) => {
+router.post("/", userAuth, (req, res) => {
     if (req.session) {
         Item.create({
             name: req.body.name,
@@ -56,7 +60,7 @@ router.post("/", (req, res) => {
 // item put route here
 
 // delete one item by id
-router.delete("/:id", (req, res) => {
+router.delete("/:id", userAuth, (req, res) => {
     Item.destroy({
         where: {
             id: req.params.id
