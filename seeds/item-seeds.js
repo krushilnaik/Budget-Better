@@ -17,13 +17,28 @@ const itemData = [
         event_id: 3
     },
     {
-        name: "christmas lights",
+        name: "Christmas Lights",
         price: 100,
         event_id: 2
     },
     {
-        name: "birthday cake",
+        name: "Birthday Cake",
         price: 300,
+        event_id: 3
+    },
+    {
+        name: "Catering",
+        price: 7500,
+        event_id: 1
+    },
+    {
+        name: "Christmas Tree",
+        price: 75,
+        event_id: 2
+    },
+    {
+        name: "Birthday Candles",
+        price: 5,
         event_id: 3
     }
 ];
