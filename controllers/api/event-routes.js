@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { User, Event, Item } = require("../../models");
+const userAuth = require("../../utils/auth");
 
 // get all events
 router.get("/", (req, res) => {
@@ -41,26 +42,26 @@ router.get("/:id", (req, res) => {
 });
 
 // create a new event
-router.post("/", (req, res) => {
+router.post("/", userAuth, (req, res) => {
     if (req.session) {
         Event.create({
             title: req.body.title,
             date: req.body.date,
             budget: req.body.budget,
-            user_id: req.body.user_id //shouldn't this be req.session.user_id?
+            user_id: req.session.user_id //shouldn't this be req.session.user_id?
         })
             .then(dbEventData => res.json(dbEventData))
             .catch(err => {
                 console.log(err);
                 res.status(500).json(err);
             });
-    }
+    };
 });
 
 // put route goes here
 
 // delete one event by id
-router.delete("/:id", (req, res) => {
+router.delete("/:id", userAuth, (req, res) => {
     Event.destroy({
         where: {
             id: req.params.id
