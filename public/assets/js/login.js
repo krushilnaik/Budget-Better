@@ -22,42 +22,50 @@ function toggle() {
 	}, 120);
 }
 
-submitButton.addEventListener('submit', event => {
+async function loginFormHandler(event) {
 	event.preventDefault();
 
-	const email = document.querySelector('#email').value.trim();
+	const username = document.querySelector('#email').value.trim();
 	const password = document.querySelector('#password').value.trim();
 
-	// create new user, how to include toggle?
-	if (email && password) {
-		const response = await fetch('/api/users', {
-			method: 'post',
-			body: JSON.stringify({
-				email,
-				password
-			}),
-			headers: { 'Content-Type': 'application/json' }
-		});
-
-		if (response.ok) {
-			//document.location.replace('/dashboard/'); what is th new location?
-		} else {
-			alert(response.statusText);
+	if (login.classList.contains("register")) {
+		if (username && password) {
+			const response = await fetch('/api/users', {
+				method: 'post',
+				body: JSON.stringify({
+					username,
+					password
+				}),
+				headers: { 'Content-Type': 'application/json' }
+			});
+	
+			if (response.ok) {
+				document.location.replace("/dashboard");
+			}
+			else {
+				alert(response.statusText);
+			}
 		}
-	} else if (email && password) { //login new user, missing toggle?
-		const response = await fetch('/api/users/login', {
-			method: 'post',
-			body: JSON.stringify({
-				email,
-				password
-			}),
-			headers: { 'Content-Type': 'application/json' }
-		});
+	}
+	else {
+		if (username && password) {
+			const response = await fetch('/api/users/login', {
+				method: 'post',
+				body: JSON.stringify({
+					username,
+					password
+				}),
+				headers: { 'Content-Type': 'application/json' }
+			});
+	
+			if (response.ok) {
+				document.location.replace("/dashboard");
+			}
+			else {
+				alert(response.statusText);
+			}
+		};
+	};	
+};
 
-		if (response.ok) {
-			//document.location.replace('/dashboard/'); what is th new location?
-		} else {
-			alert(response.statusText);
-		}
-	} 
-});
+document.querySelector(".form").addEventListener("submit", loginFormHandler);
