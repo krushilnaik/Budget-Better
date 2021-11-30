@@ -25,15 +25,15 @@ function toggle() {
 async function loginFormHandler(event) {
 	event.preventDefault();
 
-	const username = document.querySelector('#email').value.trim();
+	const email = document.querySelector('#email').value.trim();
 	const password = document.querySelector('#password').value.trim();
 
 	if (login.classList.contains("register")) {
-		if (username && password) {
+		if (email && password) {
 			const response = await fetch('/api/users', {
 				method: 'post',
 				body: JSON.stringify({
-					username,
+					email,
 					password
 				}),
 				headers: { 'Content-Type': 'application/json' }
@@ -48,11 +48,11 @@ async function loginFormHandler(event) {
 		}
 	}
 	else {
-		if (username && password) {
+		if (email && password) {
 			const response = await fetch('/api/users/login', {
 				method: 'post',
 				body: JSON.stringify({
-					username,
+					email,
 					password
 				}),
 				headers: { 'Content-Type': 'application/json' }
