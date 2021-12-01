@@ -2,25 +2,60 @@
 
 nav {
 	position: fixed;
-	display: flex;
-	flex-direction: row;
-	gap: 15px;
-	right: 0;
-	align-items: center;
-	padding: 10px 20px;
-	font-size: 20px;
-	background-color: lightseagreen;
-	color: honeydew;
+	bottom: 30px;
+	width: 100%;
 
 	ul {
 		display: flex;
 		flex-direction: row;
-		gap: 15px;
+		justify-content: space-between;
+		font-size: 56px;
+		padding: 30px;
 
 		li {
 			list-style-type: none;
-			font-weight: bold;
-			font-family: sans-serif;
+			background-color: #1088ff;
+			padding: 15px 25px;
+			border-radius: 99999px;
+
+			a {
+				color: honeydew;
+				font-family: Lato, sans-serif;
+				font-weight: 700;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	nav {
+		top: 0;
+		right: 0;
+		bottom: unset;
+		background-color: lightseagreen;
+		width: fit-content;
+		height: 7vh;
+		padding: 0;
+		box-shadow: 0 0 15px darkslateblue;
+
+		ul {
+			padding: 0;
+			justify-content: end;
+			align-items: center;
+			font-size: 27px;
+
+			li {
+				background-color: transparent;
+
+				a {
+					transition: color 300ms;
+
+					&:hover {
+						color: darkslateblue;
+					}
+				}
+			}
 		}
 	}
 }
