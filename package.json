@@ -16,6 +16,9 @@
 	},
 	"keywords": [],
 	"author": "",
+	"engines": {
+		"node": "17.x"
+	},
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/krushilnaik/Project-2/issues"
