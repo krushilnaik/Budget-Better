@@ -18,11 +18,13 @@
 	referrerpolicy='no-referrer'
 ></script>
 
+<script defer src="assets/js/add-item.js"></script>
+<script defer src="assets/js/delete-item.js"></script>
 <script defer src='assets/js/delete-event.js'></script>
 
 <script>
 	anime({
-		targets: '.events .event',
+		targets: '.events .event-wrapper',
 		translateY: [200, 0],
 		opacity: [0, 1],
 		duration: 500,

@@ -1,27 +1,46 @@
-<div class='event'>
-	<h2>
-		{{title}}
-	</h2>
-	<span class='budget'>Budget: $ {{format_money budget}}</span>
+<div class='event-wrapper'>
 	<button id='delete-event-{{id}}'>x</button>
-	<div class='items'>
-		<h3>
-			Items
-		</h3>
-		<ul>
-			{{#each items}}
+	<div class='event'>
+		<h2>
+			{{title}}
+		</h2>
+		<span class='budget'>Budget: $ {{format_money budget}}</span>
+		<div class='items'>
+			<h3>
+				Items
+			</h3>
+			<ul>
+				{{#each items}}
+					<li>
+						<div class='item'>
+							{{name}}
+						</div>
+						<span class='price'>
+							$
+							{{price}}
+						</span>
+					</li>
+				{{/each}}
 				<li>
-					<div class='item'>
-						{{name}}
+					<div class='item-wrapper'>
+						<button id='add-item-{{id}}'>+</button>
+						<input
+							type='text'
+							name='new-name'
+							id='new-name-{{id}}'
+							class='item'
+							placeholder='New item: '
+						/>
 					</div>
-					<span class='price'>
-						$
-						{{price}}
-					</span>
+					<input
+						type='number'
+						name='new-price'
+						id='new-price-{{id}}'
+						class='price'
+						placeholder='$ ___ '
+					/>
 				</li>
-			{{else}}
-				No items added to this event.
-			{{/each}}
-		</ul>
+			</ul>
+		</div>
 	</div>
 </div>

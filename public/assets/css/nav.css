@@ -1,8 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Ubuntu:wght@700&display=swap");
 nav {
 	position: fixed;
-	bottom: 30px;
+	bottom: 0;
+	padding-bottom: 30px;
+	-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
 	width: 100%;
+	background-color: rgba(0, 0, 0, 0.55);
+	z-index: 999999;
 }
 nav ul {
 	display: -webkit-box;
@@ -42,6 +47,7 @@ nav ul li a {
 		width: fit-content;
 		height: 7vh;
 		padding: 0;
+		border-bottom-left-radius: 25px;
 		-webkit-box-shadow: 0 0 15px darkslateblue;
 		box-shadow: 0 0 15px darkslateblue;
 	}
