@@ -6,7 +6,7 @@
 
 body {
 	display: grid;
-	grid-template-rows: 4em 1fr;
+	grid-template-rows: 1fr 4em;
 	background-color: #1672ce;
 }
 
@@ -18,30 +18,6 @@ body {
 
 	img {
 		width: 50px;
-	}
-}
-
-nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 20px;
-	font-size: 20px;
-	background-color: lightseagreen;
-	color: honeydew;
-	box-shadow: 0 0 7px black;
-
-	ul {
-		display: flex;
-		flex-direction: row;
-		gap: 15px;
-
-		li {
-			list-style-type: none;
-			font-weight: bold;
-			font-family: sans-serif;
-		}
 	}
 }
 
@@ -74,4 +50,8 @@ footer {
 	color: honeydew;
 	font-family: sans-serif;
 	font-size: 20px;
+}
+
+#logout {
+	cursor: pointer;
 }

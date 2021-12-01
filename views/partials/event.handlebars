@@ -1,51 +1,27 @@
-<div class="event">
-  <h2>
-    Event title
-  </h2>
-  <p class="description">
-    Event description. Describes what the event is about.
-  </p>
-  <div class="items">
-    <h3>
-      Items
-    </h3>
-    <ul>
-      {{!-- {{#each items}}
-	      <li>
-	        <div class="item">
-	          Item title
-	        </div>
-	        <span class="price">
-	          $ 100
-	        </span>
-	      </li>
-	    {{else}}
-	      No items added to this event.
-	    {{/each}} --}}
-      <li>
-        <div class="item">
-          Item title
-        </div>
-        <span class="price">
-          $ 100
-        </span>
-      </li>
-      <li>
-        <div class="item">
-          Item title
-        </div>
-        <span class="price">
-          $ 100
-        </span>
-      </li>
-      <li>
-        <div class="item">
-          Item title
-        </div>
-        <span class="price">
-          $ 100
-        </span>
-      </li>
-    </ul>
-  </div>
+<div class='event'>
+	<h2>
+		{{title}}
+	</h2>
+	<span class='budget'>Budget: $ {{format_money budget}}</span>
+	<button class='delete-event'>x</button>
+	<div class='items'>
+		<h3>
+			Items
+		</h3>
+		<ul>
+			{{#each items}}
+				<li>
+					<div class='item'>
+						{{name}}
+					</div>
+					<span class='price'>
+						$
+						{{price}}
+					</span>
+				</li>
+			{{else}}
+				No items added to this event.
+			{{/each}}
+		</ul>
+	</div>
 </div>
