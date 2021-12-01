@@ -7,7 +7,7 @@
 
 body {
 	display: grid;
-	grid-template-rows: 4em 1fr;
+	grid-template-rows: 1fr 4em;
 	background-color: #1672ce;
 }
 
@@ -26,43 +26,6 @@ body {
 }
 .logo img {
 	width: 50px;
-}
-
-nav {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	-webkit-box-pack: justify;
-	-ms-flex-pack: justify;
-	justify-content: space-between;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
-	padding: 0 20px;
-	font-size: 20px;
-	background-color: lightseagreen;
-	color: honeydew;
-	-webkit-box-shadow: 0 0 7px black;
-	box-shadow: 0 0 7px black;
-}
-nav ul {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	gap: 15px;
-}
-nav ul li {
-	list-style-type: none;
-	font-weight: bold;
-	font-family: sans-serif;
 }
 
 a {
@@ -99,4 +62,8 @@ footer {
 	color: honeydew;
 	font-family: sans-serif;
 	font-size: 20px;
+}
+
+#logout {
+	cursor: pointer;
 }

@@ -1,18 +1,35 @@
-h1 {
-	color: honeydew;
+// h1 {
+// 	color: honeydew;
+// }
+
+// .crimson {
+// 	color: darksalmon;
+// }
+
+// .indianred {
+// 	color: #ff7b00;
+// }
+
+// .events {
+// 	display: flex;
+// 	flex-direction: row;
+// 	flex-wrap: wrap;
+// 	gap: 15px;
+// }
+
+.user {
+	color: coral;
 }
 
-.crimson {
-	color: darksalmon;
-}
+.dashboard-link {
+	margin: auto;
+	background-color: firebrick;
+	padding: 10px 20px;
+	border-radius: 9999px;
+	transition: background-color 300ms;
 
-.indianred {
-	color: #ff7b00;
-}
-
-.events {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	gap: 15px;
+	&:hover {
+		background-color: #d32828;
+		color: inherit;
+	}
 }

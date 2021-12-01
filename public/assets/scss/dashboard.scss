@@ -1,0 +1,16 @@
+.events {
+	background-color: crimson;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 15px;
+	height: 100%;
+}
+
+@media only screen and (max-width: 480px) {
+	.events {
+		background-color: darkblue;
+		flex-direction: column;
+		height: 100%;
+	}
+}

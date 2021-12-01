@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Ubuntu:wght@700&display=swap");
+nav {
+	position: fixed;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	gap: 15px;
+	right: 0;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	padding: 10px 20px;
+	font-size: 20px;
+	background-color: lightseagreen;
+	color: honeydew;
+}
+nav ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	gap: 15px;
+}
+nav ul li {
+	list-style-type: none;
+	font-weight: bold;
+	font-family: sans-serif;
+}

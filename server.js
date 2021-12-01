@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require('express');
-const { engine } = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const sequelize = require('./config/connection');
 const router = require('./controllers');
+const helpers = require('./utils/helpers');
 
 /**
  * @type {session.SessionOptions}
@@ -23,7 +25,9 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.engine('handlebars', engine({ defaultLayout: 'main' }));
+const hbs = exphbs.create({ defaultLayout: 'main', helpers });
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(session(sess));
@@ -33,16 +37,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(router);
 
-app.get('/login', (req, res) => {
-	res.render('login', { title: 'Budget Better | Login' });
-});
+app.get('/destroy', (req, res) => {
+	req.session.destroy();
 
-app.get('/new-event', (req, res) => {
-	res.render('new-event');
-});
-
-app.get('/', (req, res) => {
-	res.render('index', { title: 'Budget Better' });
+	res.json({ session: req.session });
 });
 
 app.all('*', (req, res) => {
