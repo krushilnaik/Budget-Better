@@ -1,35 +1,28 @@
-// h1 {
-// 	color: honeydew;
-// }
-
-// .crimson {
-// 	color: darksalmon;
-// }
-
-// .indianred {
-// 	color: #ff7b00;
-// }
-
-// .events {
-// 	display: flex;
-// 	flex-direction: row;
-// 	flex-wrap: wrap;
-// 	gap: 15px;
-// }
-
-.user {
-	color: coral;
+main {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	place-content: center;
+	font-size: 5rem;
 }
 
-.dashboard-link {
-	margin: auto;
-	background-color: firebrick;
-	padding: 10px 20px;
-	border-radius: 9999px;
-	transition: background-color 300ms;
+.index {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 
-	&:hover {
-		background-color: #d32828;
-		color: inherit;
+	.user {
+		color: crimson;
+	}
+
+	.dashboard-link {
+		text-align: center;
+		background-color: dodgerblue;
+		text-decoration: none;
+		color: honeydew;
+		font-weight: bold;
+		line-height: 2.5em;
+		border: solid 7px honeydew;
+		border-radius: 9999px;
 	}
 }
