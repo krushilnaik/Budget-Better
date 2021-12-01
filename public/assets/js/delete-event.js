@@ -14,11 +14,15 @@ async function deleteFormHandler(eventId) {
 	}
 }
 
-document.querySelectorAll('.event button').forEach(button => {
-	const id = button.id.split('-').splice(-1);
+document
+	.querySelectorAll('.event-wrapper button[id^="delete-event"]')
+	.forEach(button => {
+		console.log(button);
 
-	button.addEventListener('click', event => {
-		event.preventDefault();
-		deleteFormHandler(id);
+		const id = button.id.split('-').splice(-1);
+
+		button.addEventListener('click', event => {
+			event.preventDefault();
+			deleteFormHandler(id);
+		});
 	});
-});
