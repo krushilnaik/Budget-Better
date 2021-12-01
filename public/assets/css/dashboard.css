@@ -1,5 +1,5 @@
 .title {
-	position: absolute;
+	position: fixed;
 	font-size: 72px;
 	width: -webkit-max-content;
 	width: -moz-max-content;
@@ -12,10 +12,11 @@
 	padding: 25px 45px;
 	-webkit-clip-path: polygon(40px 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
 	clip-path: polygon(40px 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
+	z-index: 999999;
 }
 
 .events {
-	margin: 300px 0;
+	padding: 300px 0;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -51,9 +52,14 @@
 	}
 
 	.events {
+		padding: 150px 30px;
+		padding-bottom: 0;
 		-webkit-box-orient: horizontal;
 		-webkit-box-direction: normal;
 		-ms-flex-direction: row;
 		flex-direction: row;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		gap: 30px;
 	}
 }

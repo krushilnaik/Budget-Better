@@ -5,12 +5,13 @@
 button[id^=delete-event] {
 	position: absolute;
 	right: 0;
-	top: -105px;
+	top: -90px;
 	background-color: #ff3d3d;
 	font-size: 72px;
 	color: honeydew;
 	border: solid 8px white;
-	padding: 15px 25px;
+	border-bottom: none;
+	padding: 5px 25px;
 	border-radius: 25px 25px 0 0;
 }
 
@@ -32,6 +33,10 @@ button[id^=delete-event] {
 }
 .event .items {
 	margin-top: 50px;
+}
+.event .items h3 {
+	text-align: center;
+	font-size: 36px;
 }
 .event ul {
 	display: -webkit-box;
@@ -68,15 +73,88 @@ button[id^=delete-event] {
 	border-radius: inherit;
 }
 
+[id^=new-name],
+[id^=new-price] {
+	font-size: inherit;
+	border: none;
+	line-height: 1.5em;
+	padding: 15px;
+	border-radius: 30px;
+	color: honeydew;
+}
+[id^=new-name]::-webkit-input-placeholder,
+[id^=new-price]::-webkit-input-placeholder {
+	color: rgba(240, 255, 240, 0.75);
+}
+[id^=new-name]::-moz-placeholder,
+[id^=new-price]::-moz-placeholder {
+	color: rgba(240, 255, 240, 0.75);
+}
+[id^=new-name]:-ms-input-placeholder,
+[id^=new-price]:-ms-input-placeholder {
+	color: rgba(240, 255, 240, 0.75);
+}
+[id^=new-name]::-ms-input-placeholder,
+[id^=new-price]::-ms-input-placeholder {
+	color: rgba(240, 255, 240, 0.75);
+}
+[id^=new-name]::placeholder,
+[id^=new-price]::placeholder {
+	color: rgba(240, 255, 240, 0.75);
+}
+
+[id^=new-name] {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	width: 100%;
+}
+
+[id^=new-price] {
+	width: 28%;
+}
+
+.item-wrapper {
+	width: 60%;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-radius: 9999px;
+	background-color: rgba(255, 255, 255, 0.5);
+	padding: 0 5px;
+}
+.item-wrapper [id^=add-item] {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	font-size: 30px;
+	font-weight: bold;
+	background-color: white;
+	border: solid 2px #a7a7a7;
+	-webkit-transition: background-color 300ms;
+	transition: background-color 300ms;
+}
+.item-wrapper [id^=add-item]:hover {
+	background-color: #e6e6e6;
+}
+
 @media screen and (min-width: 1025px) {
 	button[id^=delete-event-] {
 		display: grid;
+		-ms-flex-line-pack: center;
+		align-content: center;
+		-webkit-box-pack: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		place-content: center;
 		top: 10px;
 		right: 10px;
 		padding: 0;
-		width: 70px;
-		height: 70px;
-		font-size: 50px;
+		width: 60px;
+		height: 60px;
+		font-size: 30px;
 		border-radius: 50%;
 		border: solid 5px white;
 		z-index: 3;
@@ -88,7 +166,7 @@ button[id^=delete-event] {
 	}
 
 	.event {
-		width: 600px;
+		width: 550px;
 		text-align: left;
 		z-index: 2;
 	}

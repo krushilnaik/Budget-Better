@@ -15,7 +15,9 @@ router.get('/new-event', (req, res) => {
 		return;
 	}
 
-	res.render('new-event');
+	res.render('new-event', {
+		loggedIn: true
+	});
 });
 
 router.get('/', (req, res) => {

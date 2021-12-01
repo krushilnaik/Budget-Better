@@ -20,9 +20,26 @@
 							{{price}}
 						</span>
 					</li>
-				{{else}}
-					No items added to this event.
 				{{/each}}
+				<li>
+					<div class='item-wrapper'>
+						<button id='add-item-{{id}}'>+</button>
+						<input
+							type='text'
+							name='new-name'
+							id='new-name-{{id}}'
+							class='item'
+							placeholder='New item: '
+						/>
+					</div>
+					<input
+						type='number'
+						name='new-price'
+						id='new-price-{{id}}'
+						class='price'
+						placeholder='$ ___ '
+					/>
+				</li>
 			</ul>
 		</div>
 	</div>

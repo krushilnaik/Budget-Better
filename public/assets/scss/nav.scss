@@ -2,8 +2,12 @@
 
 nav {
 	position: fixed;
-	bottom: 30px;
+	bottom: 0;
+	padding-bottom: 30px;
+	box-shadow: 0 0 30px rgba($color: black, $alpha: 0.7);
 	width: 100%;
+	background-color: rgba($color: black, $alpha: 0.55);
+	z-index: 999999;
 
 	ul {
 		display: flex;
