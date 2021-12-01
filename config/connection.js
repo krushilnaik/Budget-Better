@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize');
+const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
 let sequelize;
@@ -17,5 +17,7 @@ if (process.env.JAWSDB_URL) {
 		}
 	);
 }
+
+sequelize.query(`CREATE DATABASE IF NOT EXISTS ${process.env.DB_NAME}`);
 
 module.exports = sequelize;
