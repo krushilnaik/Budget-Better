@@ -32,14 +32,6 @@
 		"sequelize": "^6.11.0"
 	},
 	"devDependencies": {
-		"@types/sequelize": "^4.28.10",
-		"gulp": "^4.0.2",
-		"gulp-nodemon": "^2.5.0",
-		"gulp-postcss": "^9.0.1",
-		"gulp-sass": "^5.0.0",
-		"nodemon": "^2.0.15",
-		"postcss-preset-env": "^7.0.1",
-		"postcss-scss": "^4.0.2",
-		"sass": "^1.43.5"
+		"nodemon": "^2.0.15"
 	}
 }
