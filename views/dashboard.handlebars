@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="assets/css/dashboard.css" />
 <link rel="stylesheet" href="assets/css/event.css" />
 
+<h2 class="title">Your events</h2>
+
 <div class="events">
 	{{#each events as |data|}}
 		{{> event data}}
@@ -15,6 +17,8 @@
 	crossorigin='anonymous'
 	referrerpolicy='no-referrer'
 ></script>
+
+<script defer src='assets/js/delete-event.js'></script>
 
 <script>
 	anime({

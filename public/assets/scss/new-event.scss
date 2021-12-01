@@ -1,0 +1,72 @@
+.form {
+	display: grid;
+	place-content: center;
+	background-color: firebrick;
+	width: 85vw;
+	height: 30vh;
+	border-radius: 25px;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+	}
+}
+
+.picker {
+	font-size: 3rem;
+	border-bottom: solid 1px white;
+	width: 100%;
+
+	i {
+		color: rgba($color: honeydew, $alpha: 0.5);
+	}
+
+	input {
+		background-color: transparent;
+		color: honeydew;
+		outline: none;
+
+		&::placeholder {
+			color: inherit;
+		}
+	}
+}
+
+.submit {
+	font-size: 3rem;
+	background-color: dodgerblue;
+	width: fit-content;
+	padding: 10px 30px;
+	margin: auto;
+	border-radius: 999px;
+	color: honeydew;
+	border: solid 5px honeydew;
+}
+
+@media screen and (min-width: 1025px) {
+	input {
+		width: 100%;
+	}
+
+	.form {
+		width: 50vw;
+		height: 50vh;
+	}
+
+	.picker {
+		display: flex;
+		flex-direction: row;
+		gap: 15px;
+		align-items: center;
+
+		i,
+		input {
+			font-size: 1.7rem;
+		}
+	}
+
+	.submit {
+		font-size: 1.5rem;
+	}
+}

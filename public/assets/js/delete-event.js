@@ -1,19 +1,24 @@
-async function deleteFormHandler(event) {
-    event.preventDefault();
+async function deleteFormHandler(eventId) {
+	// const eventId = window.location.toString().split('/')[
+	//     window.location.toString().split('/').length - 1
+	// ];
 
-    // const eventId = window.location.toString().split('/')[
-    //     window.location.toString().split('/').length - 1
-    // ];
+	const response = await fetch(`/api/events/${eventId}`, {
+		method: 'DELETE'
+	});
 
-    const response = await fetch(`/api/events/${eventId}`, {
-        method: 'DELETE',
-    });
-
-    if (response.ok) {
-        //document.location.replace('/dashboard');
-    } else {
-        alert(response.statusText);
-    }
+	if (response.ok) {
+		document.location.replace('/dashboard');
+	} else {
+		alert(response.statusText);
+	}
 }
 
-//document.querySelector('UPDATE').addEventListener('submit', deleteFormHandler);
+document.querySelectorAll('.event button').forEach(button => {
+	const id = button.id.split('-').splice(-1);
+
+	button.addEventListener('click', event => {
+		event.preventDefault();
+		deleteFormHandler(id);
+	});
+});
