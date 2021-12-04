@@ -18,8 +18,6 @@ async function newFormHandler(event_id, name, price) {
 	}
 }
 
-// console.log(document.querySelectorAll('.item-wrapper'));
-
 document.querySelectorAll('.item-wrapper').forEach(form => {
 	const button = form.querySelector('button');
 
@@ -28,22 +26,8 @@ document.querySelectorAll('.item-wrapper').forEach(form => {
 	const name = form.querySelector('input[id^="new-name"]');
 	const price = form.parentElement.querySelector('input[id^="new-price"]');
 
-	name.addEventListener('input', event => {
-		event.preventDefault();
-
-		console.log(name.value);
-	});
-
-	price.addEventListener('input', event => {
-		event.preventDefault();
-
-		console.log(price.value);
-	});
-
 	button.addEventListener('click', event => {
 		event.preventDefault();
-
-		console.log('click registered');
 
 		newFormHandler(Number(id), name.value, Number(price.value));
 	});

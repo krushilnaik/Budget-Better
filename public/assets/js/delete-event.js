@@ -17,7 +17,6 @@ async function deleteFormHandler(eventId) {
 document
 	.querySelectorAll('.event-wrapper button[id^="delete-event"]')
 	.forEach(button => {
-		console.log(button);
 
 		const id = button.id.split('-').splice(-1);
 
