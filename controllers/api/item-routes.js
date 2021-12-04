@@ -4,7 +4,9 @@ const userAuth = require("../../utils/auth");
 
 // get all items
 router.get("/", (req, res) => {
-    Item.findAll({})
+    Item.findAll({
+        order: [["id", "ASC"]]
+    })
         .then(dbItemData => res.json(dbItemData))
         .catch(err => {
             console.log(err);

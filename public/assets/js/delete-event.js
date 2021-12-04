@@ -1,8 +1,4 @@
 async function deleteFormHandler(eventId) {
-	// const eventId = window.location.toString().split('/')[
-	//     window.location.toString().split('/').length - 1
-	// ];
-
 	const response = await fetch(`/api/events/${eventId}`, {
 		method: 'DELETE'
 	});
@@ -12,7 +8,7 @@ async function deleteFormHandler(eventId) {
 	} else {
 		alert(response.statusText);
 	}
-}
+};
 
 document
 	.querySelectorAll('.event-wrapper button[id^="delete-event"]')
