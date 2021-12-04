@@ -58,6 +58,30 @@ router.post("/", userAuth, (req, res) => {
 });
 
 // item put route here
+router.put("/:id", (req, res) => {
+    Item.update(
+        {
+            name: req.body.name,
+            price: req.body.price
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+        .then(dbItemData => {
+            if (!dbItemData) {
+                res.status(404).json({ message: "No item found with this id." });
+                return;
+            }
+            res.json(dbItemData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // delete one item by id
 router.delete("/:id", userAuth, (req, res) => {

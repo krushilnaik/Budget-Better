@@ -59,6 +59,31 @@ router.post("/", userAuth, (req, res) => {
 });
 
 // put route goes here
+router.put("/:id", (req, res) => {
+    Event.update(
+        {
+            title: req.body.title,
+            date: req.body.date,
+            budget: req.body.budget
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+        .then(dbEventData => {
+            if (!dbEventData) {
+                res.status(404).json({ message: "No event found with this id." });
+                return;
+            }
+            res.json(dbEventData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // delete one event by id
 router.delete("/:id", userAuth, (req, res) => {

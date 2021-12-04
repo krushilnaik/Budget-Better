@@ -9,13 +9,13 @@
 			<h3>
 				Items
 			</h3>
-			<ul>
+			<ul class="all-items">
 				{{#each items}}
 					<li>
 						<div class='item'>
 							{{name}}
 						</div>
-						<span class='price'>
+						<span class='price' id="{{id}}">
 							$
 							{{price}}
 						</span>

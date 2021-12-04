@@ -99,6 +99,31 @@ router.post('/logout', (req, res) => {
 });
 
 // user put route would go here
+router.put("/:id", (req, res) => {
+	User.update(
+		{
+			email: req.body.email,
+			password: req.body.password
+		},
+		{
+			individualHooks: true,
+			where: {
+				id: req.params.id
+			}
+		}
+	)
+		.then(dbUserData => {
+			if (!dbUserData) {
+				res.status(404).json({ message: "No user found with this id." });
+				return;
+			}
+			res.json(dbUserData);
+		})
+		.catch(err => {
+			console.log(err);
+			res.status(500).json(err);
+		});
+});
 
 // deletes a single user by id
 router.delete('/:id', (req, res) => {

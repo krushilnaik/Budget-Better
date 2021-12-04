@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { Event, User, Item } = require('../../models');
+const sequelize = require('../config/connection');
+const { Event, User, Item } = require('../models');
 
 // get all events the user has made for their dashboard
 router.get('/', (req, res) => {
