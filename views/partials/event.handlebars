@@ -5,17 +5,18 @@
 			{{title}}
 		</h2>
 		<span class='budget'>Budget: $ {{format_money budget}}</span>
+		<span class='total'></span>
 		<div class='items'>
 			<h3>
 				Items
 			</h3>
 			<ul class="all-items">
 				{{#each items}}
-					<li>
+					<li class="item-list">
 						<div class='item'>
 							{{name}}
 						</div>
-						<span class='price' id="{{id}}">
+						<span class='price' id="item-{{id}}">
 							$
 							{{price}}
 						</span>
