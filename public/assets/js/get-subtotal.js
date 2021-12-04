@@ -12,7 +12,6 @@ function updateSubtotal() {
         });
         if (subtotal > budgetNumber) {
             budgetEl.classList.add("over-budget");
-            console.log("worked");
         }
         else {
             budgetEl.classList.remove("over-budget");
