@@ -60,10 +60,7 @@ router.post("/", userAuth, (req, res) => {
 // item put route here
 router.put("/:id", (req, res) => {
     Item.update(
-        {
-            name: req.body.name,
-            price: req.body.price
-        },
+        req.body,
         {
             where: {
                 id: req.params.id
