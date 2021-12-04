@@ -8,6 +8,7 @@ function updateSubtotal() {
                 subtotal+=subprice;
             }
         });
+        if (subtotal )
         event.querySelector('.total').textContent = 'Current subtotal: $ ' + subtotal;
     })
 }
