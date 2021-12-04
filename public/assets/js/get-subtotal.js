@@ -1,6 +1,8 @@
 function updateSubtotal() {
     const allEvents = document.querySelectorAll(".event");
     allEvents.forEach(event => {
+        let budgetNumber = parseFloat(event.querySelector(".budget").textContent.split("$")[1].trim().replace(",", ""));
+        let budgetEl = event.querySelector(".total");
         let subtotal = 0;
         event.querySelectorAll('.item-list .price').forEach(price => {
             const subprice = Number(price.textContent.split('$')[1].trim());
@@ -8,7 +10,15 @@ function updateSubtotal() {
                 subtotal+=subprice;
             }
         });
-        event.querySelector('.total').textContent = 'Current subtotal: $ ' + subtotal;
+        if (subtotal > budgetNumber) {
+            budgetEl.classList.add("over-budget");
+            console.log("worked");
+        }
+        else {
+            budgetEl.classList.remove("over-budget");
+        }
+
+        budgetEl.textContent = 'Current subtotal: $ ' + subtotal;
     })
 }
 
