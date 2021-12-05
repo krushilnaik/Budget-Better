@@ -4,7 +4,9 @@ const userAuth = require("../../utils/auth");
 
 // get all items
 router.get("/", (req, res) => {
-    Item.findAll({})
+    Item.findAll({
+        order: [["id", "ASC"]]
+    })
         .then(dbItemData => res.json(dbItemData))
         .catch(err => {
             console.log(err);
@@ -58,6 +60,27 @@ router.post("/", userAuth, (req, res) => {
 });
 
 // item put route here
+router.put("/:id", (req, res) => {
+    Item.update(
+        req.body,
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+        .then(dbItemData => {
+            if (!dbItemData) {
+                res.status(404).json({ message: "No item found with this id." });
+                return;
+            }
+            res.json(dbItemData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // delete one item by id
 router.delete("/:id", userAuth, (req, res) => {

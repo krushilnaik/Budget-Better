@@ -1,21 +1,23 @@
-async function deleteFormHandler(event) {
-    event.preventDefault();
-
-    // const itemId = event.getAttribute('UPDATE')
-
-    // const eventId = window.location.toString().split('/')[
-    //     window.location.toString().split('/').length - 1
-    // ];
-
+async function deleteItemHandler(itemId) {
     const response = await fetch(`/api/items/${itemId}`, {
         method: 'DELETE',
     });
 
     if (response.ok) {
-        //document.location.replace('/dashboard/event/${eventId}'); // Refresh the page
+        document.location.replace('/dashboard');
+        console.log("yay");
     } else {
         alert(response.statusText);
     }
-}
+};
 
-//document.querySelector('UPDATE').addEventListener('submit', deleteFormHandler);
+document
+    .querySelectorAll(".all-items button[id^='delete-item']")
+    .forEach(button => {
+        const id = button.id.split("-").splice(-1);
+
+        button.addEventListener("click", event => {
+            event.preventDefault();
+            deleteItemHandler(id);
+        });
+    });

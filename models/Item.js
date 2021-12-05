@@ -19,10 +19,10 @@ Item.init(
 			type: DataTypes.DECIMAL(10, 2),
 			allowNull: false
 		},
-		// include: {
-		//     type: DataTypes.BOOLEAN,
-		//     defaultValue: true
-		// },
+		include: {
+			type: DataTypes.BOOLEAN,
+			defaultValue: true
+		},
 		event_id: {
 			allowNull: false,
 			type: DataTypes.INTEGER,
