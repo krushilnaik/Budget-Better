@@ -151,11 +151,6 @@ button[id^='delete-item-'] {
 	}
 }
 
-input[type='checkbox'] {
-	position: relative;
-	z-index: 9999;
-}
-
 label,
 button[id^='delete-item-'] {
 	user-select: none;
@@ -163,14 +158,14 @@ button[id^='delete-item-'] {
 
 label {
 	position: absolute;
-	left: -55px;
+	left: -65px;
 	display: grid;
 	justify-content: flex-end;
 	align-items: center;
 	border-radius: 0 50px 50px 0;
 	background-color: lightsalmon;
 	height: 100%;
-	width: 55px;
+	width: 65px;
 	text-align: end;
 	padding-right: 5px;
 	transition: left 300ms 100ms, background-color 200ms;
@@ -202,7 +197,8 @@ label {
 .total {
 	padding: 10px;
 	border-radius: 15px;
-	font-size: 24px;
+	font-size: 42px;
+	margin: auto;
 	width: fit-content;
 	background-color: lighten($color: forestgreen, $amount: 33);
 	transition: background-color 350ms;
@@ -255,13 +251,14 @@ label {
 			margin: unset;
 		}
 
-		// .budget {
-		// 	font-size: 30px;
-		// }
-
 		li {
 			padding: 10px;
 			font-size: 1.5rem;
 		}
+	}
+
+	.total {
+		font-size: 24px;
+		margin: unset;
 	}
 }

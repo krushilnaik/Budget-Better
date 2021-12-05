@@ -20,9 +20,13 @@
 			<ul class='all-items'>
 				{{#each items}}
 					<li class='item-list'>
-						<button id='delete-item-{{id}}'>x</button>
-						<label for='include-{{id}}'>w</label>
+						<button id='delete-item-{{id}}'>
+							<i class='fas fa-times'></i>
+						</button>
 						{{#if include}}
+							<label for='include-{{id}}'>
+								<i class='fas fa-eye'></i>
+							</label>
 							<input
 								type='checkbox'
 								class='include'
@@ -32,6 +36,9 @@
 								checked
 							/>
 						{{else}}
+							<label for='include-{{id}}'>
+								<i class='fas fa-eye-slash'></i>
+							</label>
 							<input
 								type='checkbox'
 								class='include'

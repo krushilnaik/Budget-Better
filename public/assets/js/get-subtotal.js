@@ -35,19 +35,20 @@ const checkboxEl = document.querySelectorAll('.include');
 checkboxEl.forEach(element => {
 	element.addEventListener('change', async event => {
 		const id = event.target.id.split('-').splice(-1);
+		const include = element.checked;
+
+		element.previousElementSibling.querySelector('i').className = `fas fa-eye${
+			include ? '' : '-slash'
+		}`;
 
 		updateSubtotal();
-
-		const body = {
-			include: event.target.checked
-		};
 
 		await fetch(`/api/items/${id}`, {
 			method: 'PUT',
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify(body)
+			body: JSON.stringify({ include })
 		});
 	});
 });
