@@ -13,7 +13,7 @@ const helpers = require('./utils/helpers');
  */
 const sess = {
 	secret: 'I like oreos',
-	cookie: {},
+	cookie: { maxAge: 36000000 },
 	resave: false,
 	saveUninitialized: true,
 	store: new SequelizeStore({
