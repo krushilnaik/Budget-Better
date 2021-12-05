@@ -12,6 +12,5 @@ function format_date(date) {
 
 module.exports = {
 	format_money,
-	format_date,
-	format_cents
+	format_date
 };
