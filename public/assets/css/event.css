@@ -255,6 +255,10 @@ label:hover {
 .total .value {
 	color: green;
 }
+.total .budget {
+	font-size: inherit;
+	color: #646464;
+}
 .total.over-budget {
 	background-color: #ff8a8a;
 }
@@ -291,13 +295,13 @@ label:hover {
 		width: 650px;
 		text-align: left;
 		z-index: 2;
+		/* .budget {*/
+		/* 	font-size: 30px;*/
+		/* }*/
 	}
 	.event h2 {
 		font-size: 45px;
 		margin: unset;
-	}
-	.event .budget {
-		font-size: 30px;
 	}
 	.event li {
 		padding: 10px;

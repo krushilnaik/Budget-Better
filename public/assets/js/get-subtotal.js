@@ -2,7 +2,7 @@ function updateSubtotal() {
 	const allEvents = document.querySelectorAll('.event');
 	allEvents.forEach(event => {
 		let budgetNumber = parseFloat(
-			event.querySelector('.budget .value').innerHTML.replaceAll(',', '')
+			event.querySelector('.budget').innerHTML.replaceAll(',', '')
 		);
 		let budgetEl = event.querySelector('.total .value');
 		let subtotal = 0;

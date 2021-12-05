@@ -211,6 +211,11 @@ label {
 		color: green;
 	}
 
+	.budget {
+		font-size: inherit;
+		color: darken($color: darkgray, $amount: 27);
+	}
+
 	&.over-budget {
 		background-color: lighten($color: red, $amount: 27);
 
@@ -250,9 +255,9 @@ label {
 			margin: unset;
 		}
 
-		.budget {
-			font-size: 30px;
-		}
+		// .budget {
+		// 	font-size: 30px;
+		// }
 
 		li {
 			padding: 10px;
