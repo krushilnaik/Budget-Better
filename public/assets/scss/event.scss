@@ -1,0 +1,264 @@
+.event-wrapper {
+	position: relative;
+}
+
+button[id^='delete-event'] {
+	position: absolute;
+	right: 0;
+	top: -90px;
+	background-color: #ff3d3d;
+	font-size: 72px;
+	color: honeydew;
+	border: solid 8px white;
+	border-bottom: none;
+	padding: 5px 25px;
+	border-radius: 25px 25px 0 0;
+}
+
+.event {
+	position: relative;
+	width: 85vw;
+	background-color: firebrick;
+	padding: 15px;
+	font-size: 3rem;
+	color: honeydew;
+	text-align: center;
+	border-radius: 30px;
+
+	h2 {
+		width: fit-content;
+		display: inline-block;
+	}
+
+	.date {
+		font-size: 2rem;
+	}
+
+	.items {
+		margin-top: 50px;
+
+		h3 {
+			text-align: center;
+			font-size: 36px;
+		}
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	li {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		background-color: rgba($color: white, $alpha: 0.2);
+		list-style-type: none;
+		padding: 20px;
+		border-radius: 30px;
+
+		.price {
+			background-color: rgba($color: white, $alpha: 0.4);
+			padding: inherit;
+			border-radius: inherit;
+		}
+	}
+}
+
+[id^='new-name'],
+[id^='new-price'] {
+	font-size: inherit;
+	border: none;
+	line-height: 1.5em;
+	padding: 15px;
+	border-radius: 30px;
+
+	color: honeydew;
+
+	&::placeholder {
+		color: rgba($color: honeydew, $alpha: 0.75);
+	}
+}
+
+[id^='new-name'] {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	width: 100%;
+}
+
+[id^='new-price'] {
+	width: 28%;
+}
+
+.item-wrapper {
+	width: 60%;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	border-radius: 9999px;
+	background-color: rgba($color: white, $alpha: 0.5);
+	padding: 0 5px;
+
+	[id^='add-item'] {
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		font-size: 30px;
+		font-weight: bold;
+		background-color: white;
+		border: solid 2px rgb(167, 167, 167);
+		transition: background-color 300ms;
+
+		&:hover {
+			background-color: darken($color: white, $amount: 10);
+		}
+	}
+}
+
+button[id^='delete-item-'] {
+	transition: left 300ms, background-color 250ms;
+	position: absolute;
+	left: -30px;
+	background-color: lighten($color: crimson, $amount: 22);
+	color: honeydew;
+	width: 30px;
+	height: 100%;
+	border-radius: 0 50px 50px 0;
+	border: none;
+	font-size: 20px;
+	z-index: 3;
+}
+
+.item-list {
+	position: relative;
+	overflow: hidden;
+
+	&:hover {
+		button[id^='delete-item-'] {
+			left: 0;
+
+			&:hover {
+				background-color: lighten($color: crimson, $amount: 25);
+			}
+		}
+
+		label {
+			left: 0;
+		}
+	}
+}
+
+label,
+button[id^='delete-item-'] {
+	user-select: none;
+}
+
+label {
+	position: absolute;
+	left: -65px;
+	display: grid;
+	justify-content: flex-end;
+	align-items: center;
+	border-radius: 0 50px 50px 0;
+	background-color: lightsalmon;
+	height: 100%;
+	width: 65px;
+	text-align: end;
+	padding-right: 5px;
+	transition: left 300ms 100ms, background-color 200ms;
+	z-index: 2;
+	cursor: pointer;
+
+	&:hover {
+		background-color: lighten($color: lightsalmon, $amount: 3);
+	}
+}
+
+.include {
+	& + .item::before {
+		content: '';
+		top: 50%;
+		left: 0;
+		position: absolute;
+		height: 2px;
+		width: 0%;
+		background-color: rgba($color: white, $alpha: 0.8);
+		transition: width 300ms;
+	}
+
+	&:not(:checked) + .item::before {
+		width: 100%;
+	}
+}
+
+.total {
+	padding: 10px;
+	border-radius: 15px;
+	font-size: 42px;
+	margin: auto;
+	width: fit-content;
+	background-color: lighten($color: forestgreen, $amount: 33);
+	transition: background-color 350ms;
+
+	.value {
+		color: green;
+	}
+
+	.budget {
+		font-size: inherit;
+		color: darken($color: darkgray, $amount: 27);
+	}
+
+	&.over-budget {
+		background-color: lighten($color: red, $amount: 27);
+
+		.value {
+			color: red;
+		}
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	button[id^='delete-event-'] {
+		display: grid;
+		place-content: center;
+		top: 10px;
+		right: 10px;
+		padding: 0;
+		width: 60px;
+		height: 60px;
+		font-size: 27px;
+		border-radius: 50%;
+		border: solid 5px white;
+		z-index: 3;
+		transition: background-color 300ms;
+
+		&:hover {
+			background-color: lighten($color: #ff3d3d, $amount: 10);
+		}
+	}
+
+	.event {
+		width: 650px;
+		text-align: left;
+		z-index: 2;
+
+		h2 {
+			font-size: 45px;
+			margin: unset;
+		}
+
+		li {
+			padding: 10px;
+			font-size: 1.5rem;
+		}
+	}
+
+	.total {
+		font-size: 24px;
+		margin: unset;
+	}
+}

@@ -4,7 +4,7 @@ const eventRoutes = require('./event-routes');
 const itemRoutes = require('./item-routes');
 
 router.use('/users', userRoutes);
-router.use('/posts', eventRoutes);
-router.use('/comments', itemRoutes);
+router.use('/events', eventRoutes);
+router.use('/items', itemRoutes);
 
 module.exports = router;

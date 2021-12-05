@@ -1,118 +1,156 @@
 .login {
-	width: 55vmax;
-	height: 55vmin;
-	background-color: #c22f2fdd;
-	overflow: hidden;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	opacity: 0;
-	flex-direction: row;
-	border-radius: 10px;
-	box-shadow: 3px 3px 10px black;
-	transition: background-color 500ms;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: column-reverse;
+	flex-direction: column-reverse;
+	background-color: crimson;
+	width: 75vw;
+	height: 55vh;
+	border-radius: 25px;
+	color: honeydew;
 }
-
 .login > div {
+	width: 100%;
+	height: 50%;
 	display: grid;
+	-ms-flex-line-pack: center;
+	align-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	place-content: center;
-	width: 50%;
-	transition: transform 500ms;
+	-webkit-transition: -webkit-transform 350ms;
+	transition: -webkit-transform 350ms;
+	transition: transform 350ms;
+	transition: transform 350ms, -webkit-transform 350ms;
 }
 
 .form {
-	background-color: #232e4e;
+	z-index: -1;
 }
 
 form {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
-	gap: 30px;
-}
-
-form input {
-	background-color: transparent;
-	line-height: 1.5em;
-	font-size: 24px;
-	outline: none;
-	border: none;
-	border-bottom: solid 1px #f0fff0bb;
-	color: honeydew;
-}
-
-form input::placeholder {
-	color: honeydew;
-}
-
-.input {
-	position: relative;
-	z-index: 0;
-}
-
-.input::after {
-	position: absolute;
-	content: attr(data-placeholder);
-	z-index: -1;
-	top: 0;
-	left: 0;
-	font-size: 24px;
-	color: honeydew;
-	transition: transform 250ms;
-	transform: scale(1) translateY(0);
-	transform-origin: 0 0;
-}
-
-.input:focus-within::after {
-	transform: scale(0.55) translateY(-1em);
-}
-
-.register {
-	background-color: #249264dd;
-}
-
-.register .form {
-	transform: translateX(-100%);
-}
-
-.register .tooltip {
-	transform: translateX(100%);
-}
-
-.tooltip {
-	text-align: center;
-}
-
-h3 {
-	font-size: 26px;
-}
-
-#toggle {
-	font: inherit;
-	color: lightskyblue;
-	background-color: transparent;
-	border: none;
-	transition: color 300ms;
-}
-
-#toggle:hover {
-	color: #25cac2;
+	gap: 3.5em;
 }
 
 #submit {
-	background-color: #ff1645;
-	border: solid 3px white;
-	border-radius: 15px;
-	font-size: 24px;
-	line-height: 1.5em;
+	font-size: 3rem;
+	padding: 15px;
+	border-radius: 9999px;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
 	width: fit-content;
-	padding: 7px 14px;
-	align-self: center;
+	margin: auto;
+	background-color: dodgerblue;
+	border: solid 3px white;
+	line-height: 1.5em;
+	padding: 17px 24px;
 	font-weight: bold;
-	color: #cfcfcf;
-	transition: color, border, background-color;
-	transition-duration: 300ms;
+	color: honeydew;
 }
 
-#submit:hover {
-	color: #ff1645;
-	background-color: #cfcfcf;
-	border: solid 3px #ff1645;
+.tooltip {
+	border-radius: inherit;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	gap: 25px;
+	background-color: darkslateblue;
+	z-index: 2;
+}
+.tooltip h2 {
+	font-size: 6rem;
+}
+.tooltip h3 {
+	text-align: center;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+#toggle {
+	font-size: inherit;
+	background-color: transparent;
+	border: none;
+	font-weight: bold;
+	color: lightcoral;
+}
+
+.register .tooltip {
+	position: relative;
+	-webkit-transform: translate(0, -100%);
+	transform: translate(0, -100%);
+}
+.register .form {
+	position: relative;
+	-webkit-transform: translate(0, 100%);
+	transform: translate(0, 100%);
+}
+
+@media screen and (min-width: 1025px) {
+	.login {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		width: 55vmax;
+		height: 55vmin;
+	}
+	.login > div {
+		width: 50%;
+		height: 100%;
+	}
+
+	.tooltip {
+		text-align: center;
+	}
+	.tooltip h2 {
+		font-size: 4rem;
+	}
+	.tooltip h3 {
+		font-size: 2rem;
+	}
+
+	#toggle {
+		-webkit-transition: color 300ms;
+		transition: color 300ms;
+	}
+	#toggle:hover {
+		color: #8ec6ff;
+	}
+
+	#submit {
+		font-size: 1.5rem;
+		-webkit-transition: color, border, background-color;
+		transition: color, border, background-color;
+		-webkit-transition-duration: 300ms;
+		transition-duration: 300ms;
+	}
+	#submit:hover {
+		color: dodgerblue;
+		background-color: white;
+		border: solid 3px dodgerblue;
+	}
+
+	.register .tooltip {
+		-webkit-transform: translate(100%, 0);
+		transform: translate(100%, 0);
+	}
+	.register .form {
+		-webkit-transform: translate(-100%, 0);
+		transform: translate(-100%, 0);
+	}
 }

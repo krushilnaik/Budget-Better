@@ -1,9 +1,12 @@
 const path = require('path');
 const express = require('express');
-const { engine } = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 const sequelize = require('./config/connection');
+const router = require('./controllers');
+const helpers = require('./utils/helpers');
 
 /**
  * @type {session.SessionOptions}
@@ -12,7 +15,7 @@ const sess = {
 	secret: 'I like oreos',
 	cookie: {},
 	resave: false,
-	saveUnitialized: true,
+	saveUninitialized: true,
 	store: new SequelizeStore({
 		db: sequelize
 	})
@@ -22,9 +25,9 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-// const apiRoutes = require('./controllers/api');
+const hbs = exphbs.create({ defaultLayout: 'main', helpers });
 
-app.engine('handlebars', engine({ defaultLayout: 'main' }));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(session(sess));
@@ -32,21 +35,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/api', apiRoutes);
+app.use(router);
 
-app.get('/login', (req, res) => {
-	res.render('login', {
-		title: 'Budget Better | Login',
-		styles: [{ sheet: 'style' }, { sheet: 'login' }],
-		scripts: [{ script: 'login' }]
-	});
+app.get('/destroy', (req, res) => {
+	req.session.destroy();
+
+	res.json({ session: req.session });
 });
 
-app.get('/', (req, res) => {
-	res.render('index', {
-		title: 'Budget Better',
-		styles: [{ sheet: 'style' }, { sheet: 'index' }]
-	});
+app.all('*', (req, res) => {
+	res.render('404');
 });
 
 sequelize.sync({ force: false }).then(() => {

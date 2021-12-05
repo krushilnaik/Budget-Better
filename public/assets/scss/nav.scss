@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Ubuntu:wght@700&display=swap');
+
+nav {
+	position: fixed;
+	bottom: 0;
+	padding-bottom: 30px;
+	box-shadow: 0 0 30px rgba($color: black, $alpha: 0.7);
+	width: 100%;
+	background-color: rgba($color: black, $alpha: 0.55);
+	z-index: 999999;
+
+	ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		font-size: 56px;
+		padding: 30px;
+
+		li {
+			list-style-type: none;
+			background-color: #1088ff;
+			padding: 15px 25px;
+			border-radius: 99999px;
+
+			a {
+				color: honeydew;
+				font-family: Lato, sans-serif;
+				font-weight: 700;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	nav {
+		top: 0;
+		right: 0;
+		bottom: unset;
+		background-color: lightseagreen;
+		width: fit-content;
+		height: 7vh;
+		padding: 0;
+		border-bottom-left-radius: 25px;
+		box-shadow: 0 0 15px darkslateblue;
+
+		ul {
+			padding: 0;
+			justify-content: end;
+			align-items: center;
+			font-size: 27px;
+
+			li {
+				background-color: transparent;
+
+				a {
+					transition: color 300ms;
+
+					&:hover {
+						color: darkslateblue;
+					}
+				}
+			}
+		}
+	}
+}

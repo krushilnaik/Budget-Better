@@ -9,19 +9,63 @@ function toggle() {
 		if (result) {
 			login.querySelector('h2').innerText = 'Join us!';
 			login.querySelector('h3').innerHTML = /*html*/ `
-				Already a member?
+				<span>Already a member?</span>
 				<button id='toggle' onclick='toggle();'>Log in.</button>
 			`;
 		} else {
 			login.querySelector('h2').innerText = 'Log in here!';
 			login.querySelector('h3').innerHTML = /*html*/ `
-				Not a member?
+				<span>Not a member?</span>
 				<button id='toggle' onclick='toggle();'>Sign up.</button>
 			`;
 		}
 	}, 120);
 }
 
-submitButton.addEventListener('click', event => {
+async function loginFormHandler(event) {
 	event.preventDefault();
-});
+
+	const email = document.querySelector('#email').value.trim();
+	const password = document.querySelector('#password').value.trim();
+
+	if (login.classList.contains("register")) {
+		if (email && password) {
+			const response = await fetch('/api/users', {
+				method: 'post',
+				body: JSON.stringify({
+					email,
+					password
+				}),
+				headers: { 'Content-Type': 'application/json' }
+			});
+	
+			if (response.ok) {
+				document.location.replace("/");
+			}
+			else {
+				alert(response.statusText);
+			}
+		}
+	}
+	else {
+		if (email && password) {
+			const response = await fetch('/api/users/login', {
+				method: 'post',
+				body: JSON.stringify({
+					email,
+					password
+				}),
+				headers: { 'Content-Type': 'application/json' }
+			});
+	
+			if (response.ok) {
+				document.location.replace("/");
+			}
+			else {
+				alert(response.statusText);
+			}
+		};
+	};	
+};
+
+document.querySelector(".form").addEventListener("submit", loginFormHandler);

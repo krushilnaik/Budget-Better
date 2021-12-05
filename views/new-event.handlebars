@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="assets/css/input.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="assets/css/new-event.css">
+
+<div class="form">
+	<form>
+		{{> input type="text" id="eventName" placeholder="Event name:"}}
+		{{> input type="text" id="eventBudget" placeholder="Budget (in USD): "}}
+		<div class="picker">
+			<i class="fas fa-calendar"></i>
+			<input datepicker datepicker-autohide type="text" id="eventDate" name="date" placeholder="Select date">
+		</div>
+		<button class="submit" type="submit">Add Event</button>
+	</form>
+</div>
+
+<script src="assets/js/add-event.js"></script>
+<script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/datepicker.bundle.js"></script>

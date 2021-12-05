@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Ubuntu:wght@700&display=swap");
+nav {
+	position: fixed;
+	bottom: 0;
+	padding-bottom: 30px;
+	-webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.55);
+	z-index: 999999;
+}
+nav ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	font-size: 56px;
+	padding: 30px;
+}
+nav ul li {
+	list-style-type: none;
+	background-color: #1088ff;
+	padding: 15px 25px;
+	border-radius: 99999px;
+}
+nav ul li a {
+	color: honeydew;
+	font-family: Lato, sans-serif;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+@media screen and (min-width: 1025px) {
+	nav {
+		top: 0;
+		right: 0;
+		bottom: unset;
+		background-color: lightseagreen;
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
+		width: fit-content;
+		height: 7vh;
+		padding: 0;
+		border-bottom-left-radius: 25px;
+		-webkit-box-shadow: 0 0 15px darkslateblue;
+		box-shadow: 0 0 15px darkslateblue;
+	}
+	nav ul {
+		padding: 0;
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+		justify-content: end;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		align-items: center;
+		font-size: 27px;
+	}
+	nav ul li {
+		background-color: transparent;
+	}
+	nav ul li a {
+		-webkit-transition: color 300ms;
+		transition: color 300ms;
+	}
+	nav ul li a:hover {
+		color: darkslateblue;
+	}
+}

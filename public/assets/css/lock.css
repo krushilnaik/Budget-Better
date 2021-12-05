@@ -1,0 +1,12 @@
+main {
+	text-align: center;
+	font-size: 70px;
+	font-weight: bold;
+	color: honeydew;
+}
+
+@media screen and (min-width: 1025px) {
+	main {
+		font-size: 4.5rem;
+	}
+}

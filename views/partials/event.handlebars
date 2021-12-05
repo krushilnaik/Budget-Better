@@ -1,0 +1,83 @@
+<div class='event-wrapper'>
+	<button id='delete-event-{{id}}'>
+		<i class='fas fa-times'></i>
+	</button>
+	<div class='event'>
+		<h2>
+			{{title}}
+		</h2>
+		<span class='date'>{{format_date date}}</span>
+		<br />
+		<br />
+		<div class='total'>
+			<span class='label'>Current subtotal: $</span>
+			<span class='value'>0</span>
+			/
+			<span class='budget'>{{format_cents budget}}</span>
+		</div>
+		<div class='items'>
+			<h3>
+				Items
+			</h3>
+			<ul class='all-items'>
+				{{#each items}}
+					<li class='item-list'>
+						<button id='delete-item-{{id}}'>
+							<i class='fas fa-times'></i>
+						</button>
+						{{#if include}}
+							<label for='include-{{id}}'>
+								<i class='fas fa-eye'></i>
+							</label>
+							<input
+								type='checkbox'
+								class='include'
+								id='include-{{id}}'
+								name='include'
+								hidden
+								checked
+							/>
+						{{else}}
+							<label for='include-{{id}}'>
+								<i class='fas fa-eye-slash'></i>
+							</label>
+							<input
+								type='checkbox'
+								class='include'
+								id='include-{{id}}'
+								name='include'
+								hidden
+							/>
+						{{/if}}
+						<div class='item'>
+							{{name}}
+						</div>
+						<span class='price' id='item-{{id}}'>
+							$
+							{{format_cents price}}
+						</span>
+					</li>
+				{{/each}}
+				<li>
+					<div class='item-wrapper'>
+						<button id='add-item-{{id}}'>+</button>
+						<input
+							type='text'
+							name='new-name'
+							id='new-name-{{id}}'
+							class='item'
+							placeholder='New item: '
+						/>
+					</div>
+					<input
+						type='number'
+						name='new-price'
+						id='new-price-{{id}}'
+						class='price'
+						placeholder='$ ___ '
+					/>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>

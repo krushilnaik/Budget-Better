@@ -1,10 +1,29 @@
+<link rel='stylesheet' href='assets/css/nav.css' />
+
 <nav>
 	<ul>
 		<li>
-			<a href='/login'>Log in</a>
+			{{#if loggedIn}}
+				<a id='logout' onclick='logout();'>
+					Log out
+				</a>
+			{{else}}
+				<a href='/login'>
+					Log in
+				</a>
+			{{/if}}
 		</li>
 		<li>
-			<a href='/'>Dashboard</a>
+			<a href='/dashboard'>
+				Dashboard
+			</a>
+		</li>
+		<li>
+			<a href='/new-event'>
+				New Event
+			</a>
 		</li>
 	</ul>
 </nav>
+
+<script src='assets/js/logout.js'></script>

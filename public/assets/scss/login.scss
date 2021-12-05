@@ -1,0 +1,135 @@
+.login {
+	display: flex;
+	flex-direction: column-reverse;
+	background-color: crimson;
+	width: 75vw;
+	height: 55vh;
+	border-radius: 25px;
+	color: honeydew;
+
+	> div {
+		width: 100%;
+		height: 50%;
+		display: grid;
+		place-content: center;
+		transition: transform 350ms;
+	}
+}
+
+.form {
+	z-index: -1;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 3.5em;
+}
+
+#submit {
+	font-size: 3rem;
+	padding: 15px;
+	border-radius: 9999px;
+	width: fit-content;
+	margin: auto;
+	background-color: dodgerblue;
+	border: solid 3px white;
+	line-height: 1.5em;
+	padding: 17px 24px;
+	font-weight: bold;
+	color: honeydew;
+}
+
+.tooltip {
+	border-radius: inherit;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	background-color: darkslateblue;
+	z-index: 2;
+
+	h2 {
+		font-size: 6rem;
+	}
+
+	h3 {
+		text-align: center;
+		font-size: 3rem;
+		font-weight: bold;
+	}
+}
+
+#toggle {
+	font-size: inherit;
+	background-color: transparent;
+	border: none;
+	font-weight: bold;
+	color: lightcoral;
+}
+
+.register {
+	.tooltip {
+		position: relative;
+		transform: translate(0, -100%);
+	}
+
+	.form {
+		position: relative;
+		transform: translate(0, 100%);
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	.login {
+		flex-direction: row;
+		width: 55vmax;
+		height: 55vmin;
+
+		> div {
+			width: 50%;
+			height: 100%;
+		}
+	}
+
+	.tooltip {
+		text-align: center;
+
+		h2 {
+			font-size: 4rem;
+		}
+
+		h3 {
+			font-size: 2rem;
+		}
+	}
+
+	#toggle {
+		transition: color 300ms;
+
+		&:hover {
+			color: #8ec6ff;
+		}
+	}
+
+	#submit {
+		font-size: 1.5rem;
+		transition: color, border, background-color;
+		transition-duration: 300ms;
+
+		&:hover {
+			color: dodgerblue;
+			background-color: white;
+			border: solid 3px dodgerblue;
+		}
+	}
+
+	.register {
+		.tooltip {
+			transform: translate(100%, 0);
+		}
+
+		.form {
+			transform: translate(-100%, 0);
+		}
+	}
+}

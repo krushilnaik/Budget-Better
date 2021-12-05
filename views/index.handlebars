@@ -1,3 +1,17 @@
-<h1>Welcome to
-	<span class='indianred'>Budget</span><span class='crimson'>Better</span>!
-</h1>
+<link rel='stylesheet' href='assets/css/index.css' />
+
+<div class='index'>
+	{{#if email}}
+		<h2>
+			<span>Welcome back,</span>
+			<span class='user'>{{email}}</span>!
+		</h2>
+	{{else}}
+		<h2>
+			<span>Welcome,</span>
+			<span class='user'>Guest</span>!
+		</h2>
+	{{/if}}
+
+	<a href='/dashboard' class='dashboard-link'>Go to Dashboard</a>
+</div>
