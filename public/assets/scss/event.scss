@@ -114,6 +114,87 @@ button[id^='delete-event'] {
 	}
 }
 
+button[id^='delete-item-'] {
+	transition: left 300ms, background-color 250ms;
+	position: absolute;
+	left: -30px;
+	background-color: lighten($color: crimson, $amount: 22);
+	color: honeydew;
+	width: 30px;
+	height: 100%;
+	border-radius: 0 50px 50px 0;
+	border: none;
+	font-size: 20px;
+	z-index: 3;
+}
+
+.item-list {
+	position: relative;
+	overflow: hidden;
+
+	&:hover {
+		button[id^='delete-item-'] {
+			left: 0;
+
+			&:hover {
+				background-color: lighten($color: crimson, $amount: 25);
+			}
+		}
+
+		label {
+			left: 0;
+		}
+	}
+}
+
+input[type='checkbox'] {
+	position: relative;
+	z-index: 9999;
+}
+
+label,
+button[id^='delete-item-'] {
+	user-select: none;
+}
+
+label {
+	position: absolute;
+	left: -55px;
+	display: grid;
+	justify-content: flex-end;
+	align-items: center;
+	border-radius: 0 50px 50px 0;
+	background-color: lightsalmon;
+	height: 100%;
+	width: 55px;
+	text-align: end;
+	padding-right: 5px;
+	transition: left 300ms 100ms, background-color 200ms;
+	z-index: 2;
+	cursor: pointer;
+
+	&:hover {
+		background-color: lighten($color: lightsalmon, $amount: 3);
+	}
+}
+
+.include {
+	& + .item::before {
+		content: '';
+		top: 50%;
+		left: 0;
+		position: absolute;
+		height: 2px;
+		width: 0%;
+		background-color: rgba($color: white, $alpha: 0.8);
+		transition: width 300ms;
+	}
+
+	&:not(:checked) + .item::before {
+		width: 100%;
+	}
+}
+
 @media screen and (min-width: 1025px) {
 	button[id^='delete-event-'] {
 		display: grid;

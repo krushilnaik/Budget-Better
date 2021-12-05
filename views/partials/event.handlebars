@@ -11,15 +11,23 @@
 			<h3>
 				Items
 			</h3>
-			<ul class="all-items">
+			<ul class='all-items'>
 				{{#each items}}
-					<button id="delete-item-{{id}}">x</button>
-					<li class="item-list">
+					<li class='item-list'>
+						<button id='delete-item-{{id}}'>x</button>
+						<label for='include-{{id}}'>w</label>
+						<input
+							type='checkbox'
+							class='include'
+							id='include-{{id}}'
+							name='include'
+							checked={{include}}
+							hidden
+						/>
 						<div class='item'>
 							{{name}}
 						</div>
-						<input type="checkbox" class="include" name="include" checked={{include}}/>
-						<span class='price' id="item-{{id}}">
+						<span class='price' id='item-{{id}}'>
 							$
 							{{price}}
 						</span>

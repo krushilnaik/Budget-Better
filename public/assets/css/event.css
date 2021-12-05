@@ -140,6 +140,104 @@ button[id^=delete-event] {
 	background-color: #e6e6e6;
 }
 
+button[id^=delete-item-] {
+	-webkit-transition: left 300ms, background-color 250ms;
+	transition: left 300ms, background-color 250ms;
+	position: absolute;
+	left: -30px;
+	background-color: #f26e89;
+	color: honeydew;
+	width: 30px;
+	height: 100%;
+	border-radius: 0 50px 50px 0;
+	border: none;
+	font-size: 20px;
+	z-index: 3;
+}
+
+.item-list {
+	position: relative;
+	overflow: hidden;
+}
+.item-list:hover button[id^=delete-item-] {
+	left: 0;
+}
+.item-list:hover button[id^=delete-item-]:hover {
+	background-color: #f37c94;
+}
+.item-list:hover label {
+	left: 0;
+}
+
+input[type=checkbox] {
+	position: relative;
+	z-index: 9999;
+}
+
+label,
+button[id^=delete-item-] {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+[dir=ltr] label {
+	text-align: right;
+}
+
+label:dir(ltr) {
+	text-align: right;
+}
+
+[dir=rtl] label {
+	text-align: left;
+}
+
+label:dir(rtl) {
+	text-align: left;
+}
+
+label {
+	position: absolute;
+	left: -55px;
+	display: grid;
+	-webkit-box-pack: end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-radius: 0 50px 50px 0;
+	background-color: lightsalmon;
+	height: 100%;
+	width: 55px;
+	text-align: end;
+	padding-right: 5px;
+	-webkit-transition: left 300ms 100ms, background-color 200ms;
+	transition: left 300ms 100ms, background-color 200ms;
+	z-index: 2;
+	cursor: pointer;
+}
+label:hover {
+	background-color: #ffab89;
+}
+
+.include + .item::before {
+	content: "";
+	top: 50%;
+	left: 0;
+	position: absolute;
+	height: 2px;
+	width: 0%;
+	background-color: rgba(255, 255, 255, 0.8);
+	-webkit-transition: width 300ms;
+	transition: width 300ms;
+}
+.include:not(:checked) + .item::before {
+	width: 100%;
+}
+
 @media screen and (min-width: 1025px) {
 	button[id^=delete-event-] {
 		display: grid;
