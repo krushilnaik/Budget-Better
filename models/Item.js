@@ -20,8 +20,8 @@ Item.init(
 			allowNull: false
 		},
 		include: {
-		    type: DataTypes.BOOLEAN,
-		    defaultValue: true
+			type: DataTypes.BOOLEAN,
+			defaultValue: true
 		},
 		event_id: {
 			allowNull: false,
