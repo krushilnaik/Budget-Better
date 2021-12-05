@@ -13,7 +13,7 @@
 			<span class='label'>Current subtotal: $</span>
 			<span class='value'>0</span>
 			/
-			<span class='budget'>{{budget}}</span>
+			<span class='budget'>{{format_cents budget}}</span>
 		</div>
 		<div class='items'>
 			<h3>
@@ -54,7 +54,7 @@
 						</div>
 						<span class='price' id='item-{{id}}'>
 							$
-							{{price}}
+							{{format_cents price}}
 						</span>
 					</li>
 				{{/each}}
