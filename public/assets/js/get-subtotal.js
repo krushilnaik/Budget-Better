@@ -2,13 +2,9 @@ function updateSubtotal() {
 	const allEvents = document.querySelectorAll('.event');
 	allEvents.forEach(event => {
 		let budgetNumber = parseFloat(
-			event
-				.querySelector('.budget')
-				.textContent.split('$')[1]
-				.trim()
-				.replace(/,/g, '')
+			event.querySelector('.budget .value').innerHTML.replaceAll(',', '')
 		);
-		let budgetEl = event.querySelector('.total');
+		let budgetEl = event.querySelector('.total .value');
 		let subtotal = 0;
 		event.querySelectorAll('.item-list .price').forEach(price => {
 			const subprice = Number(price.textContent.split('$')[1].trim());
@@ -16,18 +12,43 @@ function updateSubtotal() {
 				subtotal += subprice;
 			}
 		});
+
 		if (subtotal > budgetNumber) {
-			budgetEl.classList.add('over-budget');
+			budgetEl.parentElement.classList.add('over-budget');
 		} else {
-			budgetEl.classList.remove('over-budget');
+			budgetEl.parentElement.classList.remove('over-budget');
 		}
 
-		budgetEl.textContent = 'Current subtotal: $ ' + subtotal;
+		const previousTotal = budgetEl.innerHTML;
+
+		anime({
+			targets: budgetEl,
+			innerHTML: [previousTotal, subtotal],
+			easing: 'easeInOutExpo',
+			round: 100,
+			duration: 500
+		});
 	});
 }
 
 const checkboxEl = document.querySelectorAll('.include');
 checkboxEl.forEach(element => {
-	element.addEventListener('change', updateSubtotal);
+	element.addEventListener('change', async event => {
+		const id = event.target.id.split('-').splice(-1);
+
+		updateSubtotal();
+
+		const body = {
+			include: event.target.checked
+		};
+
+		await fetch(`/api/items/${id}`, {
+			method: 'PUT',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(body)
+		});
+	});
 });
 updateSubtotal();

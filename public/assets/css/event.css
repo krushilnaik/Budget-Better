@@ -29,7 +29,10 @@ button[id^=delete-event] {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
-	margin: auto;
+	display: inline-block;
+}
+.event .date {
+	font-size: 2rem;
 }
 .event .items {
 	margin-top: 50px;
@@ -238,6 +241,27 @@ label:hover {
 	width: 100%;
 }
 
+.total {
+	padding: 10px;
+	border-radius: 15px;
+	font-size: 24px;
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	background-color: #77de77;
+	-webkit-transition: background-color 350ms;
+	transition: background-color 350ms;
+}
+.total .value {
+	color: green;
+}
+.total.over-budget {
+	background-color: #ff8a8a;
+}
+.total.over-budget .value {
+	color: red;
+}
+
 @media screen and (min-width: 1025px) {
 	button[id^=delete-event-] {
 		display: grid;
@@ -252,7 +276,7 @@ label:hover {
 		padding: 0;
 		width: 60px;
 		height: 60px;
-		font-size: 30px;
+		font-size: 27px;
 		border-radius: 50%;
 		border: solid 5px white;
 		z-index: 3;
@@ -264,7 +288,7 @@ label:hover {
 	}
 
 	.event {
-		width: 550px;
+		width: 650px;
 		text-align: left;
 		z-index: 2;
 	}

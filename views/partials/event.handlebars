@@ -4,9 +4,17 @@
 		<h2>
 			{{title}}
 		</h2>
-		<span class='budget'>Budget: $ {{format_money budget}}</span>
-		<span class='date'>Date: {{date}}</span>
-		<span class='total'></span>
+		<span class='date'>(Date: {{date}})</span>
+		<br />
+		<div class='budget'>
+			<span class='label'>Budget: $</span>
+			<span class='value'>{{format_money budget}}</span>
+		</div>
+		<br />
+		<div class='total'>
+			<span class='label'>Current subtotal: $</span>
+			<span class='value'>0</span>
+		</div>
 		<div class='items'>
 			<h3>
 				Items
@@ -16,14 +24,24 @@
 					<li class='item-list'>
 						<button id='delete-item-{{id}}'>x</button>
 						<label for='include-{{id}}'>w</label>
-						<input
-							type='checkbox'
-							class='include'
-							id='include-{{id}}'
-							name='include'
-							checked={{include}}
-							hidden
-						/>
+						{{#if include}}
+							<input
+								type='checkbox'
+								class='include'
+								id='include-{{id}}'
+								name='include'
+								hidden
+								checked
+							/>
+						{{else}}
+							<input
+								type='checkbox'
+								class='include'
+								id='include-{{id}}'
+								name='include'
+								hidden
+							/>
+						{{/if}}
 						<div class='item'>
 							{{name}}
 						</div>
