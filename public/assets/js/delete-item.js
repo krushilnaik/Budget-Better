@@ -5,7 +5,6 @@ async function deleteItemHandler(itemId) {
 
     if (response.ok) {
         document.location.replace('/dashboard');
-        console.log("yay");
     } else {
         alert(response.statusText);
     }
