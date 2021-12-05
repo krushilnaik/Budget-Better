@@ -59,4 +59,6 @@ checkboxEl.forEach(element => {
 		});
 	});
 });
+
+// Default call to populate first display
 updateSubtotal();
