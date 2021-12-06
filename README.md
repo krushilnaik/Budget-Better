@@ -14,6 +14,7 @@
 	- [Full Project](#full-project)
 	- [Tech Stack](#tech-stack)
 	- [How to run](#how-to-run)
+	- [Screenshots](#screenshots)
 
 ## MVP
 
@@ -45,3 +46,29 @@ flowers, limo, and catering. They will then enter the cost of each item in the f
 ## How to run
 
 `yarn install` (or `npm install`) followed by `yarn start` (or `npm start`)
+
+## Screenshots
+
+Landing Page
+
+![Application's Landing Page](./screenshots/landing-screenshot.PNG)
+
+Login Page
+
+![Login Page](./screenshots/login-screenshot.PNG)
+
+Signup Page
+
+![Signup Page](./screenshots/signup-screenshot.PNG)
+
+Over Budget Event
+
+![Over Budget Event](./screenshots/overbudget-screenshot.PNG)
+
+Under Budget Event
+
+![Under Budget Event](./screenshots/underbudget-screenshot.PNG)
+
+Including/Not including certain items GIF with deletion functionality
+
+![Functionality GIF](./screenshots/showhide-delete.gif)
