@@ -29,11 +29,11 @@
 	-webkit-transform-origin: 0 0;
 	transform-origin: 0 0;
 }
-.input[focus-within]::after {
+.input[focus-within]:after, .input.active::after {
 	-webkit-transform: scale(0.55) translateY(-1em);
 	transform: scale(0.55) translateY(-1em);
 }
-.input:focus-within::after {
+.input:focus-within:after, .input.active::after {
 	-webkit-transform: scale(0.55) translateY(-1em);
 	transform: scale(0.55) translateY(-1em);
 }
