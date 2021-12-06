@@ -26,7 +26,8 @@
 		transform-origin: 0 0;
 	}
 
-	&:focus-within::after {
+	&:focus-within:after,
+	&.active::after {
 		transform: scale(0.55) translateY(-1em);
 	}
 }

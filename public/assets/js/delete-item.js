@@ -1,8 +1,10 @@
 async function deleteItemHandler(itemId) {
+    // Call DELETE API
     const response = await fetch(`/api/items/${itemId}`, {
         method: 'DELETE',
     });
 
+    // Reponse after DELETE API
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {
@@ -10,6 +12,7 @@ async function deleteItemHandler(itemId) {
     }
 };
 
+// Create event listener for all delete item buttons
 document
     .querySelectorAll(".all-items button[id^='delete-item']")
     .forEach(button => {

@@ -1,5 +1,7 @@
 function updateSubtotal() {
 	const allEvents = document.querySelectorAll('.event');
+
+    // Calculate subtotal of items that are included for each event
 	allEvents.forEach(event => {
 		let budgetNumber = parseFloat(
 			event.querySelector('.budget').innerHTML.replaceAll(',', '')
@@ -13,6 +15,7 @@ function updateSubtotal() {
 			}
 		});
 
+        // Update stylings to be dynamic when subtotal is over or under budget
 		if (subtotal > budgetNumber) {
 			budgetEl.parentElement.classList.add('over-budget');
 		} else {
@@ -21,6 +24,7 @@ function updateSubtotal() {
 
 		const previousTotal = budgetEl.innerHTML;
 
+        // Cool animation
 		anime({
 			targets: budgetEl,
 			innerHTML: [previousTotal, subtotal],
@@ -32,6 +36,8 @@ function updateSubtotal() {
 }
 
 const checkboxEl = document.querySelectorAll('.include');
+
+// When checkboxes are clicked
 checkboxEl.forEach(element => {
 	element.addEventListener('change', async event => {
 		const id = event.target.id.split('-').splice(-1);
@@ -42,7 +48,8 @@ checkboxEl.forEach(element => {
 		}`;
 
 		updateSubtotal();
-
+        
+        // Update backend with include changes
 		await fetch(`/api/items/${id}`, {
 			method: 'PUT',
 			headers: {
@@ -52,4 +59,6 @@ checkboxEl.forEach(element => {
 		});
 	});
 });
+
+// Default call to populate first display
 updateSubtotal();
