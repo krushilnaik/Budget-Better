@@ -1,8 +1,10 @@
 async function deleteFormHandler(eventId) {
+	// Call DELETE API
 	const response = await fetch(`/api/events/${eventId}`, {
 		method: 'DELETE'
 	});
 
+	// Action after DELETE API
 	if (response.ok) {
 		document.location.replace('/dashboard');
 	} else {
@@ -10,6 +12,7 @@ async function deleteFormHandler(eventId) {
 	}
 }
 
+// Add event listener for all delete event buttons
 document
 	.querySelectorAll('.event-wrapper button[id^="delete-event"]')
 	.forEach(button => {

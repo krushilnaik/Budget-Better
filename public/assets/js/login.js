@@ -2,6 +2,7 @@ const login = document.querySelector('.login');
 const toggleButton = document.getElementById('toggle');
 const submitButton = document.getElementById('submit');
 
+// Function to toggle between signing up and logging in 
 function toggle() {
 	const result = login.classList.toggle('register');
 
@@ -25,9 +26,11 @@ function toggle() {
 async function loginFormHandler(event) {
 	event.preventDefault();
 
+	// Get input values
 	const email = document.querySelector('#email').value.trim();
 	const password = document.querySelector('#password').value.trim();
 
+	// Sign up 
 	if (login.classList.contains("register")) {
 		if (email && password) {
 			const response = await fetch('/api/users', {
@@ -47,6 +50,8 @@ async function loginFormHandler(event) {
 			}
 		}
 	}
+
+	// Log in
 	else {
 		if (email && password) {
 			const response = await fetch('/api/users/login', {
@@ -68,4 +73,5 @@ async function loginFormHandler(event) {
 	};	
 };
 
+// Event listener for when login or signup info is submitted
 document.querySelector(".form").addEventListener("submit", loginFormHandler);
